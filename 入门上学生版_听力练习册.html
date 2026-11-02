@@ -1,0 +1,3308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>汉语口语速成 入门篇 上册 听力练习册（学生版）</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2cm 2.5cm;
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+      color: #999;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    color: #333;
+    line-height: 1.8;
+    font-size: 11.5pt;
+  }
+
+  /* ===== 封皮 ===== */
+  .cover {
+    page-break-after: always;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    position: relative;
+  }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .cover-logo {
+    width: 80px; height: 80px;
+    background: #1565C0;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32pt;
+    font-weight: bold;
+  }
+  .cover-subtitle-top {
+    color: #1565C0;
+    font-size: 14pt;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .cover-top-right {
+    text-align: right;
+    color: #555;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+  .cover-line {
+    border-bottom: 3px solid #1565C0;
+    margin: 30px 0;
+  }
+  .cover-title-main {
+    text-align: center;
+    margin-top: 60px;
+  }
+  .cover-title-main h1 {
+    font-size: 40pt;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+  }
+  .cover-title-main .subtitle-cn {
+    font-size: 18pt;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .cover-title-main .subtitle-en {
+    font-size: 12pt;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  .cover-title-main .workbook-en {
+    font-size: 28pt;
+    color: #1565C0;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 1.4;
+  }
+  .cover-version {
+    text-align: center;
+    color: #666;
+    font-size: 11pt;
+    margin: 25px 0;
+  }
+  .cover-button {
+    background: #1565C0;
+    color: white;
+    text-align: center;
+    padding: 18px 40px;
+    border-radius: 12px;
+    margin: 30px 80px;
+  }
+  .cover-button .cn { font-size: 20pt; font-weight: bold; }
+  .cover-button .en { font-size: 11pt; opacity: 0.9; }
+  .cover-footer {
+    text-align: center;
+    color: #666;
+    font-size: 10pt;
+    margin-top: auto;
+  }
+
+  /* ===== 目录 ===== */
+  .toc {
+    page-break-after: always;
+    padding: 40px 0;
+  }
+  .toc h2 {
+    text-align: center;
+    color: #1565C0;
+    font-size: 24pt;
+    margin-bottom: 20px;
+    letter-spacing: 8px;
+  }
+  .toc-line {
+    border-bottom: 3px solid #1565C0;
+    width: 80px;
+    margin: 0 auto 30px;
+  }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 11.5pt;
+  }
+  .toc-page { color: #555; font-size: 10pt; }
+
+  /* ===== 课次 ===== */
+  .lesson {
+    page-break-before: always;
+    padding: 10px 0;
+  }
+  .lesson-header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .lesson-header .book-name {
+    color: #555;
+    font-size: 10pt;
+    margin-bottom: 8px;
+  }
+  .lesson-header h2 {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .lesson-header .lesson-en {
+    font-size: 11pt;
+    color: #666;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .lesson-header .line {
+    width: 60px;
+    height: 3px;
+    margin: 0 auto;
+  }
+
+  .part {
+    margin: 18px 0;
+  }
+  .part-title {
+    font-size: 12pt;
+    font-weight: bold;
+    border-left: 5px solid #1565C0;
+    padding-left: 12px;
+    margin-bottom: 4px;
+  }
+  .part-desc {
+    color: #555;
+    font-size: 9.5pt;
+    margin-left: 17px;
+    margin-bottom: 10px;
+  }
+  .question {
+    margin: 6px 0;
+    padding-left: 17px;
+    font-size: 11pt;
+  }
+  .blank-line {
+    display: inline-block;
+    border-bottom: 1px solid #999;
+    min-width: 100px;
+    height: 1em;
+    vertical-align: bottom;
+  }
+
+  .speaking-section {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid #1565C0;
+  }
+
+  /* ===== 答案页（教师版） ===== */
+  .answer-section {
+    page-break-before: always;
+    margin-top: 20px;
+  }
+  .answer-section h3 {
+    text-align: center;
+    font-size: 16pt;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1565C0;
+  }
+  .answer-subtitle {
+    font-weight: bold;
+    font-size: 11pt;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .answer-item {
+    margin: 5px 0;
+    font-size: 10.5pt;
+    line-height: 1.7;
+  }
+  .answer-part {
+    font-weight: bold;
+  }
+  .answer-note {
+    color: #999;
+    font-size: 9.5pt;
+    margin-top: 10px;
+  }
+  .script-item {
+    margin: 8px 0;
+    font-size: 10.5pt;
+    line-height: 1.8;
+  }
+
+  /* ===== 封底 ===== */
+  .back-cover {
+    page-break-before: always;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #666;
+  }
+  .back-cover .logo {
+    width: 60px; height: 60px;
+    background: #1565C0;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 封皮 ===== -->
+<div class="cover">
+  <div class="cover-top">
+    <div style="display:flex; align-items:flex-start;">
+      <div class="cover-logo">听</div>
+      <div class="cover-subtitle-top">汉语口语速成 · 配套练习册</div>
+    </div>
+    <div class="cover-top-right">
+      <div>十五课课课练</div>
+      <div>听说结合训练</div>
+    </div>
+  </div>
+  <div class="cover-line"></div>
+  <div class="cover-title-main">
+    <h1>汉语口语速成</h1>
+    <div class="subtitle-cn">入门篇　上册</div>
+    <div class="subtitle-en">Threshold (Volume 1)</div>
+    <div class="workbook-en">LISTENING &<br>SPEAKING WORKBOOK</div>
+  </div>
+  <div class="cover-version">第一版　1st Edition　|　Student Edition</div>
+  <div class="cover-button">
+    <div class="cn">听力练习册 · 学生版</div>
+    <div class="en">Listening & Speaking Workbook (Student Edition)</div>
+  </div>
+  <div class="cover-footer">《汉语口语速成 · 入门篇（上）》配套练习册</div>
+</div>
+
+<!-- ===== 目录 ===== -->
+<div class="toc">
+  <h2>目　录</h2>
+  <div class="toc-line"></div>
+    <div class="toc-item">
+      <span>第1课　你好</span>
+      <span class="toc-page">HELLO</span>
+    </div>
+    <div class="toc-item">
+      <span>第2课　你好吗</span>
+      <span class="toc-page">HOW ARE YOU</span>
+    </div>
+    <div class="toc-item">
+      <span>第3课　你吃什么</span>
+      <span class="toc-page">WHAT DO YOU WANT TO EAT</span>
+    </div>
+    <div class="toc-item">
+      <span>第4课　多少钱</span>
+      <span class="toc-page">HOW MUCH IS IT</span>
+    </div>
+    <div class="toc-item">
+      <span>第5课　图书馆在哪儿</span>
+      <span class="toc-page">WHERE IS THE LIBRARY</span>
+    </div>
+    <div class="toc-item">
+      <span>第6课　我来介绍一下儿</span>
+      <span class="toc-page">LET ME INTRODUCE</span>
+    </div>
+    <div class="toc-item">
+      <span>第7课　你身体好吗</span>
+      <span class="toc-page">HOW IS YOUR HEALTH</span>
+    </div>
+    <div class="toc-item">
+      <span>第8课　你是哪国人</span>
+      <span class="toc-page">WHICH COUNTRY ARE YOU FROM</span>
+    </div>
+    <div class="toc-item">
+      <span>第9课　你家有几口人</span>
+      <span class="toc-page">HOW MANY PEOPLE ARE THERE IN YOUR FAMILY</span>
+    </div>
+    <div class="toc-item">
+      <span>第10课　现在几点</span>
+      <span class="toc-page">WHAT TIME IS IT NOW</span>
+    </div>
+    <div class="toc-item">
+      <span>第11课　办公楼在教学楼北边</span>
+      <span class="toc-page">THE TEACHING BUILDING IS TO THE NORTH OF THE ADMINISTRATIVE BUILDING</span>
+    </div>
+    <div class="toc-item">
+      <span>第12课　要红的还是要蓝的</span>
+      <span class="toc-page">WHAT DO YOU WANT, THE RED ONE OR THE BLUE ONE</span>
+    </div>
+    <div class="toc-item">
+      <span>第13课　您给我介绍介绍</span>
+      <span class="toc-page">PLEASE GIVE ME A BRIEF INTRODUCTION</span>
+    </div>
+    <div class="toc-item">
+      <span>第14课　咱们去尝尝，好吗</span>
+      <span class="toc-page">LETS HAVE A TASTE, SHALL WE</span>
+    </div>
+    <div class="toc-item">
+      <span>第15课　去邮局怎么走</span>
+      <span class="toc-page">HOW CAN I GET TO THE POST OFFICE</span>
+    </div>
+</div>
+
+<!-- ===== 课程内容 ===== -->
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第1课　你好</h2>
+        <div class="lesson-en">HELLO</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the initial or final you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声母或韵母）</div>
+        <div class="question">1.　A. b　　B. p</div>
+        <div class="question">2.　A. n　　B. l</div>
+        <div class="question">3.　A. j　　B. x</div>
+        <div class="question">4.　A. ao　B. ou</div>
+        <div class="question">5.　A. sh　B. s</div>
+        <div class="question">6.　A. q　　B. j</div>
+        <div class="question">7.　A. in　B. ing</div>
+        <div class="question">8.　A. uo　B. ou</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the tone you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声调）</div>
+        <div class="question">1.　A. hāo　B. háo　C. hǎo　D. hào</div>
+        <div class="question">2.　A. nī　B. ní　C. nǐ　D. nì</div>
+        <div class="question">3.　A. xiē　B. xié　C. xiě　D. xiè</div>
+        <div class="question">4.　A. qīng　B. qíng　C. qǐng　D. qìng</div>
+        <div class="question">5.　A. jīn　B. jín　C. jǐn　D. jìn</div>
+        <div class="question">6.　A. tīng　B. tíng　C. tǐng　D. tìng</div>
+        <div class="question">7.　A. dū　B. dú　C. dǔ　D. dù</div>
+        <div class="question">8.　A. zuō　B. zuó　C. zuǒ　D. zuò</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. xièxie　B. xièxiè</div>
+        <div class="question">2.　A. ní hǎo　B. nǐ hǎo</div>
+        <div class="question">3.　A. bù kèqi　B. bú kèqi</div>
+        <div class="question">4.　A. láoshī　B. lǎoshī</div>
+        <div class="question">5.　A. duìbùqǐ　B. duìbuqǐ</div>
+        <div class="question">6.　A. méi guānxi　B. méi guānxì</div>
+        <div class="question">7.　A. záijiàn　B. zàijiàn</div>
+        <div class="question">8.　A. nín　B. nǐn</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1.　A.老师　B.谢谢　C.再见</div>
+        <div class="question">2.　A.没关系　B.对不起　C.不客气</div>
+        <div class="question">3.　A.请　B.进　C.坐</div>
+        <div class="question">4.　A.说　B.读　C.听</div>
+        <div class="question">5.　A.你　B.您　C.他</div>
+        <div class="question">6.　A.写　B.坐　C.说</div>
+        <div class="question">7.　A.你好　B.再见　C.请进</div>
+        <div class="question">8.　A.坐　B.听　C.进</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. lǎoshī　B. láoshī</div>
+        <div class="question">2.　A. xièxiè　B. xièxie</div>
+        <div class="question">3.　A. nǐn　B. nín</div>
+        <div class="question">4.　A. bù kèqi　B. bú kèqi</div>
+        <div class="question">5.　A. duìbuqǐ　B. duìbùqǐ</div>
+        <div class="question">6.　A. méi guānxì　B. méi guānxi</div>
+        <div class="question">7.　A. záijiàn　B. zàijiàn</div>
+        <div class="question">8.　A. qǐng　B. qíng</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1.　A.你好！　B.再见！　C.谢谢！</div>
+        <div class="question">2.　A.请坐！　B.请听！　C.请进！</div>
+        <div class="question">3.　A.谢谢！　B.不客气。　C.对不起！</div>
+        <div class="question">4.　A.没关系。　B.对不起！　C.你好！</div>
+        <div class="question">5.　A.请进！　B.再见！　C.你好！</div>
+        <div class="question">6.　A.没关系。　B.不客气。　C.谢谢。</div>
+        <div class="question">7.　A.请坐！　B.请进！　C.请说！</div>
+        <div class="question">8.　A.对不起！　B.没关系。　C.请坐！</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1.　A.你好！　B.再见！　C.谢谢！</div>
+        <div class="question">2.　A.没关系。　B.不客气。　C.对不起。</div>
+        <div class="question">3.　A.不客气。　B.谢谢！　C.没关系。</div>
+        <div class="question">4.　A.你好！　B.再见！　C.请进！</div>
+        <div class="question">5.　A.谢谢！　B.再见！　C.你好！</div>
+        <div class="question">6.　A.不客气。　B.没关系。　C.对不起。</div>
+        <div class="question">7.　A.不客气。　B.没关系。　C.再见！</div>
+        <div class="question">8.　A.你好！　B.谢谢！　C.再见！</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1.　A说“你好”，B也说“你好”。　（√ ×）</div>
+        <div class="question">2.　A说“谢谢”，B说“没关系”。　（√ ×）</div>
+        <div class="question">3.　A说“对不起”，B说“不客气”。　（√ ×）</div>
+        <div class="question">4.　他们最后说“再见”。　（√ ×）</div>
+        <div class="question">5.　A说“请进”，B说“谢谢”。　（√ ×）</div>
+        <div class="question">6.　B说“你好”，A说“再见”。　（√ ×）</div>
+        <div class="question">7.　“对不起”的应答是“不客气”。　（√ ×）</div>
+        <div class="question">8.　“谢谢”的应答是“不客气”。　（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. What does A say first in Dialogue 1?<br>A.你好！　B.请进！　C.谢谢！</div>
+        <div class="question">2. What does A say after “你好”?<br>A.谢谢！　B.请进！　C.再见！</div>
+        <div class="question">3. How does B answer “请进”?<br>A.你好！　B.不客气。　C.谢谢！</div>
+        <div class="question">4. What does A say after “谢谢”?<br>A.不客气。　B.没关系。　C.再见！</div>
+        <div class="question">5. What does A say first in Dialogue 2?<br>A.谢谢！　B.对不起！　C.你好！</div>
+        <div class="question">6. How does B answer “对不起”?<br>A.没关系。　B.不客气。　C.谢谢。</div>
+        <div class="question">7. What do they say at the end?<br>A.你好！　B.请进！　C.再见！</div>
+        <div class="question">8. Who says “再见” first?<br>A.A　B.B　C.老师</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen and write the Chinese character you hear</div>
+        <div class="part-desc">（听录音，写出你听到的汉字）</div>
+        <div class="question">1.　你<span class="blank-line"></span>！</div>
+        <div class="question">2.　<span class="blank-line"></span>！</div>
+        <div class="question">3.　对<span class="blank-line"></span>！</div>
+        <div class="question">4.　没<span class="blank-line"></span>！</div>
+        <div class="question">5.　<span class="blank-line"></span>见！</div>
+        <div class="question">6.　请<span class="blank-line"></span>！</div>
+        <div class="question">7.　老<span class="blank-line"></span>！</div>
+        <div class="question">8.　请<span class="blank-line"></span>！</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1.　你好</div>
+        <div class="question">2.　谢谢</div>
+        <div class="question">3.　不客气</div>
+        <div class="question">4.　对不起</div>
+        <div class="question">5.　没关系</div>
+        <div class="question">6.　再见</div>
+        <div class="question">7.　请进</div>
+        <div class="question">8.　老师</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Read the syllables aloud and pay attention to the tones</div>
+        <div class="part-desc">（朗读音节，注意声调和轻声）</div>
+        <div class="question">1.　nǐ hǎo　你好</div>
+        <div class="question">2.　xièxie　谢谢</div>
+        <div class="question">3.　bú kèqi　不客气</div>
+        <div class="question">4.　duìbuqǐ　对不起</div>
+        <div class="question">5.　méi guānxi　没关系</div>
+        <div class="question">6.　zàijiàn　再见</div>
+        <div class="question">7.　qǐng jìn　请进</div>
+        <div class="question">8.　lǎoshī　老师</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">1.　A：你好！B：<span class="blank-line"></span>！</div>
+        <div class="question">2.　A：谢谢！B：<span class="blank-line"></span>。</div>
+        <div class="question">3.　A：对不起！B：<span class="blank-line"></span>。</div>
+        <div class="question">4.　A：再见！B：<span class="blank-line"></span>！</div>
+        <div class="question">5.　A：请进！B：<span class="blank-line"></span>！</div>
+        <div class="question">6.　老师：请坐！学生：<span class="blank-line"></span>！</div>
+        <div class="question">7.　A：你好！B：<span class="blank-line"></span>！（用“您”）</div>
+        <div class="question">8.　老师：同学们好！你们：<span class="blank-line"></span>！</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Make a short dialogue with the given words</div>
+        <div class="part-desc">（用所给词语编对话）</div>
+        <div class="question">1.　你好 / 谢谢 / 不客气</div>
+        <div class="question">2.　对不起 / 没关系</div>
+        <div class="question">3.　再见</div>
+        <div class="question">4.　请进 / 请坐 / 谢谢</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk with your partner</div>
+        <div class="part-desc">（自由表达，两人一组表演）</div>
+        <div class="question">1. Greet your teacher in the morning.（向老师问好）</div>
+        <div class="question">2. Thank your friend, and listen to the reply.（向朋友道谢，听应答）</div>
+        <div class="question">3. Apologise to your classmate, and listen to the reply.（向同学道歉，听应答）</div>
+        <div class="question">4. Say good-bye and leave the classroom.（告别并离开教室）</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第2课　你好吗</h2>
+        <div class="lesson-en">HOW ARE YOU</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the initial or final you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声母或韵母）</div>
+        <div class="question">1.　A. b　　B. p</div>
+        <div class="question">2.　A. t　　B. d</div>
+        <div class="question">3.　A. n　　B. l</div>
+        <div class="question">4.　A. m　　B. f</div>
+        <div class="question">5.　A. o　　B. e</div>
+        <div class="question">6.　A. lu　B. lǜ</div>
+        <div class="question">7.　A. nu　B. nǚ</div>
+        <div class="question">8.　A. er　B. e</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the tone you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声调）</div>
+        <div class="question">1.　A. mā　B. má　C. mǎ　D. mà</div>
+        <div class="question">2.　A. nī　B. ní　C. nǐ　D. nì</div>
+        <div class="question">3.　A. lēi　B. léi　C. lěi　D. lèi</div>
+        <div class="question">4.　A. hēn　B. hén　C. hěn　D. hèn</div>
+        <div class="question">5.　A. ē　B. é　C. ě　D. è</div>
+        <div class="question">6.　A. dōu　B. dóu　C. dǒu　D. dòu</div>
+        <div class="question">7.　A. māng　B. máng　C. mǎng　D. màng</div>
+        <div class="question">8.　A. kē　B. ké　C. kě　D. kè</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. Tiān&#x27;ānmén　B. Tiānmén</div>
+        <div class="question">2.　A. wán　B. wánr</div>
+        <div class="question">3.　A. huār　B. huā</div>
+        <div class="question">4.　A. bàbà　B. bàba</div>
+        <div class="question">5.　A. māma　B. māmā</div>
+        <div class="question">6.　A. gēgē　B. gēge</div>
+        <div class="question">7.　A. tāmén　B. tāmen</div>
+        <div class="question">8.　A. jiějie　B. jiějiě</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1.　A.爸爸　B.妈妈　C.哥哥</div>
+        <div class="question">2.　A.忙　B.累　C.饿</div>
+        <div class="question">3.　A.妹妹　B.姐姐　C.弟弟</div>
+        <div class="question">4.　A.饿　B.累　C.渴</div>
+        <div class="question">5.　A.我们　B.你们　C.他们</div>
+        <div class="question">6.　A.忙　B.累　C.渴</div>
+        <div class="question">7.　A.也　B.都　C.很</div>
+        <div class="question">8.　A.爱人　B.爸爸　C.老师</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. bàbà　B. bàba</div>
+        <div class="question">2.　A. māma　B. māmā</div>
+        <div class="question">3.　A. gēgē　B. gēge</div>
+        <div class="question">4.　A. jiějiě　B. jiějie</div>
+        <div class="question">5.　A. tāmen　B. tāmén</div>
+        <div class="question">6.　A. mèimèi　B. mèimei</div>
+        <div class="question">7.　A. dìdi　B. dìdì</div>
+        <div class="question">8.　A. àirén　B. àiren</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1.　A.你好吗？　B.你好！　C.你忙吗？</div>
+        <div class="question">2.　A.我很好。　B.我也很好。　C.我不忙。</div>
+        <div class="question">3.　A.你呢？　B.他呢？　C.我很好。</div>
+        <div class="question">4.　A.你爸爸、妈妈都好吗？　B.你哥哥、姐姐都好吗？　C.他们都好吗？</div>
+        <div class="question">5.　A.他们都很好。　B.他们也都很好。　C.他们也很好。</div>
+        <div class="question">6.　A.你忙吗？　B.你累吗？　C.你渴吗？</div>
+        <div class="question">7.　A.我不忙。　B.我很忙。　C.我很好。</div>
+        <div class="question">8.　A.我很累。　B.我很渴。　C.我很饿。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1.　A.我很好。　B.我不忙。　C.我也很好。</div>
+        <div class="question">2.　A.我很好。　B.我也很好。　C.我很累。</div>
+        <div class="question">3.　A.我很忙。　B.我很好。　C.我不忙。</div>
+        <div class="question">4.　A.我不忙。　B.我不累。　C.我很累。</div>
+        <div class="question">5.　A.我很饿。　B.我不渴。　C.我很忙。</div>
+        <div class="question">6.　A.我很累。　B.我很好。　C.我不渴。</div>
+        <div class="question">7.　A.我不忙。　B.他们也都很好。　C.我也很好。</div>
+        <div class="question">8.　A.他们也很好。　B.我也很好。　C.我不累。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1.　B说“我很好”。　（√ ×）</div>
+        <div class="question">2.　A说“我也很好”。　（√ ×）</div>
+        <div class="question">3.　B说“他们也都很好”。　（√ ×）</div>
+        <div class="question">4.　对话3里，A问“你累吗”。　（√ ×）</div>
+        <div class="question">5.　B回答“我很忙”。　（√ ×）</div>
+        <div class="question">6.　对话1里，B问“你呢”。　（√ ×）</div>
+        <div class="question">7.　A回答“我也很好”。　（√ ×）</div>
+        <div class="question">8.　对话3里，B说“我不累”。　（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. How does B answer “你好吗”?<br>A.我很好。　B.我不忙。　C.我也很好。</div>
+        <div class="question">2. What does B ask after “我很好”?<br>A.你忙吗？　B.你呢？　C.你累吗？</div>
+        <div class="question">3. How does A answer “你呢”?<br>A.我也很好。　B.我很好。　C.我不累。</div>
+        <div class="question">4. What does A ask about work?<br>A.你累吗？　B.你饿吗？　C.你忙吗？</div>
+        <div class="question">5. How does B answer “你忙吗”?<br>A.我很忙。　B.我不忙。　C.我很好。</div>
+        <div class="question">6. What does A ask next?<br>A.你渴吗？　B.你累吗？　C.你好吗？</div>
+        <div class="question">7. How does B answer “你累吗”?<br>A.我很累。　B.我不累。　C.我很忙。</div>
+        <div class="question">8. Is B busy?<br>A.很忙　B.不忙　C.很累</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen and write the Chinese character you hear</div>
+        <div class="part-desc">（听录音，写出你听到的汉字）</div>
+        <div class="question">1.　爸<span class="blank-line"></span></div>
+        <div class="question">2.　妈<span class="blank-line"></span></div>
+        <div class="question">3.　哥<span class="blank-line"></span></div>
+        <div class="question">4.　姐<span class="blank-line"></span></div>
+        <div class="question">5.　弟<span class="blank-line"></span></div>
+        <div class="question">6.　妹<span class="blank-line"></span></div>
+        <div class="question">7.　我很<span class="blank-line"></span>。</div>
+        <div class="question">8.　我不<span class="blank-line"></span>。</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1.　你好吗</div>
+        <div class="question">2.　我很好</div>
+        <div class="question">3.　你呢</div>
+        <div class="question">4.　我也很好</div>
+        <div class="question">5.　你忙吗</div>
+        <div class="question">6.　我不忙</div>
+        <div class="question">7.　爸爸、妈妈</div>
+        <div class="question">8.　他们</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Read the syllables aloud and pay attention to the neutral tone</div>
+        <div class="part-desc">（朗读音节，注意轻声）</div>
+        <div class="question">1.　bàba　爸爸</div>
+        <div class="question">2.　māma　妈妈</div>
+        <div class="question">3.　gēge　哥哥</div>
+        <div class="question">4.　jiějie　姐姐</div>
+        <div class="question">5.　dìdi　弟弟</div>
+        <div class="question">6.　mèimei　妹妹</div>
+        <div class="question">7.　tāmen　他们</div>
+        <div class="question">8.　àiren　爱人</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">1.　A：你好吗？B：我<span class="blank-line"></span>，你呢？</div>
+        <div class="question">2.　A：我也很好。B：你<span class="blank-line"></span>吗？</div>
+        <div class="question">3.　A：我不忙。你累吗？B：我<span class="blank-line"></span>累。</div>
+        <div class="question">4.　A：你<span class="blank-line"></span>吗？B：我很渴。</div>
+        <div class="question">5.　A：你爸爸、妈妈都好吗？B：<span class="blank-line"></span>也都很好。</div>
+        <div class="question">6.　A：你饿吗？B：我不<span class="blank-line"></span>。</div>
+        <div class="question">7.　A：你妹妹好吗？B：<span class="blank-line"></span>很好。</div>
+        <div class="question">8.　A：你哥哥忙吗？B：<span class="blank-line"></span>很忙。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Make a short dialogue with the given words</div>
+        <div class="part-desc">（用所给词语编对话）</div>
+        <div class="question">1.　你好吗 / 我很好 / 你呢</div>
+        <div class="question">2.　忙 / 累</div>
+        <div class="question">3.　饿 / 渴</div>
+        <div class="question">4.　爸爸、妈妈 / 他们</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk with your partner</div>
+        <div class="part-desc">（自由表达，两人一组）</div>
+        <div class="question">1. Ask your friend “How are you?” and answer.（问朋友“你好吗”，并回答）</div>
+        <div class="question">2. Ask if your friend is busy, and answer.（问朋友忙不忙，并回答）</div>
+        <div class="question">3. Ask about your friend&#x27;s father and mother.（问问朋友爸爸妈妈的情况）</div>
+        <div class="question">4. Say you are hungry and thirsty.（说“我饿了”“我渴了”）</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第3课　你吃什么</h2>
+        <div class="lesson-en">WHAT DO YOU WANT TO EAT</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the initial or final you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声母或韵母）</div>
+        <div class="question">1.　A. h　　B. g</div>
+        <div class="question">2.　A. ai　B. ei</div>
+        <div class="question">3.　A. ch　B. sh</div>
+        <div class="question">4.　A. sh　B. s</div>
+        <div class="question">5.　A. an　B. ian</div>
+        <div class="question">6.　A. ao　B. ou</div>
+        <div class="question">7.　A. p　　B. b</div>
+        <div class="question">8.　A. k　　B. h</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the tone you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声调）</div>
+        <div class="question">1.　A. chī　B. chí　C. chǐ　D. chì</div>
+        <div class="question">2.　A. hē　B. hé　C. hě　D. hè</div>
+        <div class="question">3.　A. māi　B. mái　C. mǎi　D. mài</div>
+        <div class="question">4.　A. shū　B. shú　C. shǔ　D. shù</div>
+        <div class="question">5.　A. bī　B. bí　C. bǐ　D. bì</div>
+        <div class="question">6.　A. miān　B. mián　C. miǎn　D. miàn</div>
+        <div class="question">7.　A. chā　B. chá　C. chǎ　D. chà</div>
+        <div class="question">8.　A. bāo　B. báo　C. bǎo　D. bào</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. kāi　B. gāi</div>
+        <div class="question">2.　A. hē　B. gē</div>
+        <div class="question">3.　A. kān　B. gān</div>
+        <div class="question">4.　A. kěn　B. hěn</div>
+        <div class="question">5.　A. gān　B. gāng</div>
+        <div class="question">6.　A. hèn　B. hèng</div>
+        <div class="question">7.　A. gàole　B. gòule</div>
+        <div class="question">8.　A. bàibù　B. běibù</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1.　A.饺子　B.包子　C.面条</div>
+        <div class="question">2.　A.面包　B.米饭　C.面条</div>
+        <div class="question">3.　A.吃　B.喝　C.买</div>
+        <div class="question">4.　A.咖啡　B.茶　C.啤酒</div>
+        <div class="question">5.　A.本子　B.词典　C.书包</div>
+        <div class="question">6.　A.吃　B.喝　C.买</div>
+        <div class="question">7.　A.矿泉水　B.牛奶　C.茶</div>
+        <div class="question">8.　A.笔　B.书包　C.书</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. jiǎozi　B. jiáozi</div>
+        <div class="question">2.　A. mǐfàn　B. mīfàn</div>
+        <div class="question">3.　A. miàntiào　B. miàntiáo</div>
+        <div class="question">4.　A. miànbāo　B. miànbǎo</div>
+        <div class="question">5.　A. bàozi　B. bāozi</div>
+        <div class="question">6.　A. píjiú　B. píjiǔ</div>
+        <div class="question">7.　A. kāfēi　B. kāfèi</div>
+        <div class="question">8.　A. niúnaǐ　B. niúnǎi</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1.　A.你吃什么？　B.你喝什么？　C.你买什么？</div>
+        <div class="question">2.　A.我吃饺子。　B.我吃米饭。　C.我吃包子。</div>
+        <div class="question">3.　A.你吃什么？　B.你喝什么？　C.你买什么？</div>
+        <div class="question">4.　A.我喝啤酒。　B.我喝咖啡。　C.我喝茶。</div>
+        <div class="question">5.　A.你喝什么？　B.你吃什么？　C.你买什么？</div>
+        <div class="question">6.　A.我买词典。　B.我买本子。　C.我买书。</div>
+        <div class="question">7.　A.我吃面条。　B.我吃米饭。　C.我吃面包。</div>
+        <div class="question">8.　A.我喝牛奶。　B.我喝矿泉水。　C.我喝咖啡。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1.　A.我吃饺子。　B.我喝啤酒。　C.我买词典。</div>
+        <div class="question">2.　A.我吃米饭。　B.我喝咖啡。　C.我买书。</div>
+        <div class="question">3.　A.我买本子。　B.我吃面包。　C.我喝牛奶。</div>
+        <div class="question">4.　A.我吃米饭。　B.我喝咖啡。　C.我买词典。</div>
+        <div class="question">5.　A.我喝茶。　B.我吃面条。　C.我买笔。</div>
+        <div class="question">6.　A.我喝矿泉水。　B.我买书包。　C.我吃包子。</div>
+        <div class="question">7.　A.我喝牛奶。　B.我买书。　C.我吃面条。</div>
+        <div class="question">8.　A.我喝咖啡。　B.我买本子。　C.我吃米饭。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1.　B说“我吃饺子”。　（√ ×）</div>
+        <div class="question">2.　B吃米饭。　（√ ×）</div>
+        <div class="question">3.　B说“我喝啤酒”。　（√ ×）</div>
+        <div class="question">4.　B说“我喝茶”。　（√ ×）</div>
+        <div class="question">5.　B说“我买词典”。　（√ ×）</div>
+        <div class="question">6.　B买书包。　（√ ×）</div>
+        <div class="question">7.　对话2里，B喝矿泉水。　（√ ×）</div>
+        <div class="question">8.　B喝啤酒，不喝牛奶。　（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. What does B eat?<br>A.饺子　B.米饭　C.面条</div>
+        <div class="question">2. What does B drink?<br>A.茶　B.啤酒　C.咖啡</div>
+        <div class="question">3. What does B buy?<br>A.本子　B.词典　C.书</div>
+        <div class="question">4. What does A ask first?<br>A.你喝什么？　B.你吃什么？　C.你买什么？</div>
+        <div class="question">5. Does B drink tea?<br>A.是　B.不知道　C.不是</div>
+        <div class="question">6. What does A ask after “你喝什么”?<br>A.你买什么？　B.你吃什么？　C.你好吗？</div>
+        <div class="question">7. Does B eat noodles?<br>A.是　B.不是　C.不知道</div>
+        <div class="question">8. What does B buy?<br>A.书　B.笔　C.书包</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen and write the Chinese character you hear</div>
+        <div class="part-desc">（听录音，写出你听到的汉字）</div>
+        <div class="question">1.　我吃米<span class="blank-line"></span>。</div>
+        <div class="question">2.　我吃<span class="blank-line"></span>子。</div>
+        <div class="question">3.　我喝啤<span class="blank-line"></span>。</div>
+        <div class="question">4.　我喝咖<span class="blank-line"></span>。</div>
+        <div class="question">5.　我喝牛<span class="blank-line"></span>。</div>
+        <div class="question">6.　我买<span class="blank-line"></span>典。</div>
+        <div class="question">7.　我买书<span class="blank-line"></span>。</div>
+        <div class="question">8.　我买<span class="blank-line"></span>子。</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1.　你吃什么</div>
+        <div class="question">2.　我吃饺子</div>
+        <div class="question">3.　你喝什么</div>
+        <div class="question">4.　我喝啤酒</div>
+        <div class="question">5.　你买什么</div>
+        <div class="question">6.　我买词典</div>
+        <div class="question">7.　可口可乐</div>
+        <div class="question">8.　矿泉水</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Read the syllables aloud</div>
+        <div class="part-desc">（朗读音节）</div>
+        <div class="question">1.　fángjiān　房间</div>
+        <div class="question">2.　míngtiān　明天</div>
+        <div class="question">3.　tóngxué　同学</div>
+        <div class="question">4.　yínháng　银行</div>
+        <div class="question">5.　méiyǒu　没有</div>
+        <div class="question">6.　píjiǔ　啤酒</div>
+        <div class="question">7.　yóupiào　邮票</div>
+        <div class="question">8.　tóufa　头发</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">1.　A：你吃<span class="blank-line"></span>？B：我吃饺子。</div>
+        <div class="question">2.　A：你喝什么？B：我喝<span class="blank-line"></span>。</div>
+        <div class="question">3.　A：你买什么？B：我买<span class="blank-line"></span>。</div>
+        <div class="question">4.　A：你吃什么？B：我吃<span class="blank-line"></span>。</div>
+        <div class="question">5.　A：你喝什么？B：我喝<span class="blank-line"></span>。</div>
+        <div class="question">6.　A：你买什么？B：我买<span class="blank-line"></span>。</div>
+        <div class="question">7.　A：你吃什么？B：我吃<span class="blank-line"></span>。</div>
+        <div class="question">8.　A：你喝什么？B：我喝<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Make a short dialogue with the given words</div>
+        <div class="part-desc">（用所给词语编对话）</div>
+        <div class="question">1.　吃什么 / 饺子 / 米饭</div>
+        <div class="question">2.　喝什么 / 茶 / 咖啡</div>
+        <div class="question">3.　买什么 / 书 / 笔</div>
+        <div class="question">4.　可口可乐 / 矿泉水</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk with your partner</div>
+        <div class="part-desc">（自由表达，两人一组）</div>
+        <div class="question">1. Ask your friend what he/she wants to eat.（问朋友吃什么）</div>
+        <div class="question">2. Ask what he/she wants to drink.（问朋友喝什么）</div>
+        <div class="question">3. Ask what he/she wants to buy.（问朋友买什么）</div>
+        <div class="question">4. Say what you want to eat and drink today.（说说你今天想吃什么、喝什么）</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第4课　多少钱</h2>
+        <div class="lesson-en">HOW MUCH IS IT</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the initial or final you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声母或韵母）</div>
+        <div class="question">1.　A. q　　B. j</div>
+        <div class="question">2.　A. j　　B. q</div>
+        <div class="question">3.　A. q　　B. x</div>
+        <div class="question">4.　A. ao　B. iao</div>
+        <div class="question">5.　A. uan　B. un</div>
+        <div class="question">6.　A. iang　B. ian</div>
+        <div class="question">7.　A. ai　B. ei</div>
+        <div class="question">8.　A. s　　B. sh</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the tone you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声调）</div>
+        <div class="question">1.　A. yāo　B. yáo　C. yǎo　D. yào</div>
+        <div class="question">2.　A. huān　B. huán　C. huǎn　D. huàn</div>
+        <div class="question">3.　A. qiān　B. qián　C. qiǎn　D. qiàn</div>
+        <div class="question">4.　A. bāi　B. bái　C. bǎi　D. bài</div>
+        <div class="question">5.　A. liāng　B. liáng　C. liǎng　D. liàng</div>
+        <div class="question">6.　A. shī　B. shí　C. shǐ　D. shì</div>
+        <div class="question">7.　A. sān　B. sán　C. sǎn　D. sàn</div>
+        <div class="question">8.　A. jiū　B. jiú　C. jiǔ　D. jiù</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. jiǒu　B. jiǔ</div>
+        <div class="question">2.　A. üán　B. yuán</div>
+        <div class="question">3.　A. yī　B. i</div>
+        <div class="question">4.　A. yībǎi　B. yíbǎi　C. yìbǎi</div>
+        <div class="question">5.　A. yíkuài　B. yìkuài　C. yīkuài</div>
+        <div class="question">6.　A. xǘé　B. xué　C. qǘé</div>
+        <div class="question">7.　A. yào　B. iào　C. iao</div>
+        <div class="question">8.　A. liòu ge　B. liù ge　C. liōu ge</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1.　A.钱　B.元　C.块</div>
+        <div class="question">2.　A.买　B.换　C.要</div>
+        <div class="question">3.　A.二　B.两　C.个</div>
+        <div class="question">4.　A.瓶　B.本　C.杯</div>
+        <div class="question">5.　A.多少　B.什么　C.几</div>
+        <div class="question">6.　A.人民币　B.美元　C.钱</div>
+        <div class="question">7.　A.要　B.换　C.买</div>
+        <div class="question">8.　A.分　B.毛　C.块</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. yāo　B. yào</div>
+        <div class="question">2.　A. huàn　B. huān</div>
+        <div class="question">3.　A. qiǎn　B. qián</div>
+        <div class="question">4.　A. duōshao　B. duōshǎo</div>
+        <div class="question">5.　A. bǎi　B. bāi</div>
+        <div class="question">6.　A. liáng　B. liǎng</div>
+        <div class="question">7.　A. měiüán　B. měiyuán</div>
+        <div class="question">8.　A. shī　B. shí</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1.　A.我要买书。　B.我要换钱。　C.我要喝咖啡。</div>
+        <div class="question">2.　A.换什么？　B.多少钱？　C.换多少？</div>
+        <div class="question">3.　A.换一百美元。　B.换两百美元。　C.换五十美元。</div>
+        <div class="question">4.　A.两杯咖啡多少钱？　B.两瓶咖啡多少钱？　C.三杯咖啡多少钱？</div>
+        <div class="question">5.　A.五十块。　B.十五块。　C.五块。</div>
+        <div class="question">6.　A.多少钱？　B.多少？　C.几？</div>
+        <div class="question">7.　A.三个。　B.一个。　C.两个。</div>
+        <div class="question">8.　A.六毛五。　B.五毛六。　C.六块五。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1.　A.换多少？　B.多少钱？　C.好。</div>
+        <div class="question">2.　A.换钱。　B.换一百美元。　C.一百。</div>
+        <div class="question">3.　A.两杯。　B.咖啡。　C.五十块。</div>
+        <div class="question">4.　A.多少钱？　B.八块。　C.买。</div>
+        <div class="question">5.　A.三块。　B.三个。　C.三毛。</div>
+        <div class="question">6.　A.要咖啡吗？　B.要。　C.买。</div>
+        <div class="question">7.　A.十五块。　B.十五杯。　C.咖啡。</div>
+        <div class="question">8.　A.二十块。　B.两本。　C.两杯。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1.　A要换钱。　（√ ×）</div>
+        <div class="question">2.　A换两百美元。　（√ ×）</div>
+        <div class="question">3.　B问“换多少”。　（√ ×）</div>
+        <div class="question">4.　两杯咖啡五十块。　（√ ×）</div>
+        <div class="question">5.　咖啡一杯五十块。　（√ ×）</div>
+        <div class="question">6.　A不换美元。　（√ ×）</div>
+        <div class="question">7.　B说“六十块”。　（√ ×）</div>
+        <div class="question">8.　对话2里，A问咖啡多少钱。　（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. What does A want to do?<br>A.买书　B.换钱　C.喝咖啡</div>
+        <div class="question">2. How much money does A want to change?<br>A.一百美元　B.两百美元　C.五十美元</div>
+        <div class="question">3. How much are the two cups of coffee?<br>A.五十块　B.十五块　C.一百块</div>
+        <div class="question">4. What does B ask first?<br>A.多少钱？　B.换多少？　C.换什么？</div>
+        <div class="question">5. Does A change two hundred dollars?<br>A.是　B.不是　C.不知道</div>
+        <div class="question">6. How many cups of coffee?<br>A.一杯　B.两杯　C.三杯</div>
+        <div class="question">7. What does B answer about the coffee?<br>A.五十块　B.两杯　C.咖啡</div>
+        <div class="question">8. Is the coffee thirty yuan?<br>A.是　B.不是　C.不知道</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen and write the number you hear in Chinese</div>
+        <div class="part-desc">（听录音，用汉字写出你听到的数字）</div>
+        <div class="question">1.　<span class="blank-line"></span></div>
+        <div class="question">2.　<span class="blank-line"></span></div>
+        <div class="question">3.　<span class="blank-line"></span></div>
+        <div class="question">4.　<span class="blank-line"></span></div>
+        <div class="question">5.　<span class="blank-line"></span></div>
+        <div class="question">6.　<span class="blank-line"></span></div>
+        <div class="question">7.　<span class="blank-line"></span></div>
+        <div class="question">8.　<span class="blank-line"></span></div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1.　我要换钱</div>
+        <div class="question">2.　换多少</div>
+        <div class="question">3.　一百美元</div>
+        <div class="question">4.　两杯咖啡</div>
+        <div class="question">5.　五十块</div>
+        <div class="question">6.　多少钱</div>
+        <div class="question">7.　六毛五</div>
+        <div class="question">8.　九十块</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Read the syllables aloud and pay attention to the third-tone change</div>
+        <div class="part-desc">（朗读音节，注意第三声变调）</div>
+        <div class="question">1.　Běijīng　北京</div>
+        <div class="question">2.　jiǎndān　简单</div>
+        <div class="question">3.　lǚxíng　旅行</div>
+        <div class="question">4.　Měiguó　美国</div>
+        <div class="question">5.　kěpà　可怕</div>
+        <div class="question">6.　wǎnfàn　晚饭</div>
+        <div class="question">7.　yǔfǎ→yúfǎ　语法</div>
+        <div class="question">8.　fǔdǎo→fúdǎo　辅导</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">1.　A：我要换<span class="blank-line"></span>。B：换多少？</div>
+        <div class="question">2.　A：换一百<span class="blank-line"></span>。B：好。</div>
+        <div class="question">3.　A：两杯咖啡多少<span class="blank-line"></span>？B：五十块。</div>
+        <div class="question">4.　A：<span class="blank-line"></span>杯咖啡？B：两杯。</div>
+        <div class="question">5.　A：一瓶矿泉水<span class="blank-line"></span>钱？B：两块。</div>
+        <div class="question">6.　A：两本书<span class="blank-line"></span>？B：二十块。</div>
+        <div class="question">7.　A：咖啡多少钱？B：十五<span class="blank-line"></span>。</div>
+        <div class="question">8.　A：你喝什么？B：我喝<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Make a short dialogue with the given words</div>
+        <div class="part-desc">（用所给词语编对话）</div>
+        <div class="question">1.　换钱 / 一百美元</div>
+        <div class="question">2.　咖啡 / 多少钱 / 五十块</div>
+        <div class="question">3.　买书 / 两本 / 二十块</div>
+        <div class="question">4.　矿泉水 / 两块</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk with your partner</div>
+        <div class="part-desc">（自由表达，两人一组）</div>
+        <div class="question">1. Say you want to change money, and ask “How much?”（说你要换钱，并问“换多少”）</div>
+        <div class="question">2. Ask the price of a cup of coffee.（问一杯咖啡多少钱）</div>
+        <div class="question">3. Count from one to ten in Chinese.（用汉语数一到十）</div>
+        <div class="question">4. Ask the price of two bottles of water.（问两瓶水多少钱）</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第5课　图书馆在哪儿</h2>
+        <div class="lesson-en">WHERE IS THE LIBRARY</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the initial or final you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声母或韵母）</div>
+        <div class="question">1.　A. zh　B. z</div>
+        <div class="question">2.　A. sh　B. s</div>
+        <div class="question">3.　A. ch　B. zh</div>
+        <div class="question">4.　A. l　　B. n</div>
+        <div class="question">5.　A. uen　B. uan</div>
+        <div class="question">6.　A. uen　B. uan</div>
+        <div class="question">7.　A. x　　B. q</div>
+        <div class="question">8.　A. zh　B. z</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the tone you hear</div>
+        <div class="part-desc">（听录音，选出你听到的声调）</div>
+        <div class="question">1.　A. zāi　B. zái　C. zǎi　D. zài</div>
+        <div class="question">2.　A. yōu　B. yóu　C. yǒu　D. yòu</div>
+        <div class="question">3.　A. nār　B. nár　C. nǎr　D. nàr</div>
+        <div class="question">4.　A. yīn　B. yín　C. yǐn　D. yìn</div>
+        <div class="question">5.　A. jiū　B. jiú　C. jiǔ　D. jiù</div>
+        <div class="question">6.　A. chāng　B. cháng　C. chǎng　D. chàng</div>
+        <div class="question">7.　A. shāng　B. sháng　C. shǎng　D. shàng</div>
+        <div class="question">8.　A. yī　B. yí　C. yǐ　D. yì</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. wǔ　B. ǔ</div>
+        <div class="question">2.　A. hueí　B. huí</div>
+        <div class="question">3.　A. zhǔn　B. zhuěn</div>
+        <div class="question">4.　A. wèn　B. uèn</div>
+        <div class="question">5.　A. yíkuài　B. yìkuài</div>
+        <div class="question">6.　A. yīfēn　B. yìfēn</div>
+        <div class="question">7.　A. yìpíng　B. yípíng</div>
+        <div class="question">8.　A. yīběn　B. yìběn</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1.　A.图书馆　B.办公室　C.食堂</div>
+        <div class="question">2.　A.请问　B.知道　C.再见</div>
+        <div class="question">3.　A.银行　B.邮局　C.医院</div>
+        <div class="question">4.　A.哪儿　B.那儿　C.这儿</div>
+        <div class="question">5.　A.商店　B.宿舍　C.书店</div>
+        <div class="question">6.　A.在　B.去　C.是</div>
+        <div class="question">7.　A.医院　B.银行　C.商店</div>
+        <div class="question">8.　A.天安门　B.故宫　C.长城</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen and choose the correct pinyin</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1.　A. qǐnwèn　B. qǐngwèn</div>
+        <div class="question">2.　A. túshūguǎn　B. tūshūguǎn</div>
+        <div class="question">3.　A. zhài　B. zài</div>
+        <div class="question">4.　A. nàr　B. nǎr</div>
+        <div class="question">5.　A. shítáng　B. sítáng</div>
+        <div class="question">6.　A. niúxuéshēng　B. liúxuéshēng</div>
+        <div class="question">7.　A. sùshè　B. shùshè</div>
+        <div class="question">8.　A. bàngōngsì　B. bàngōngshì</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1.　A.请问，邮局在哪儿？　B.请问，图书馆在哪儿？　C.请问，医院在哪儿？</div>
+        <div class="question">2.　A.就在那儿。　B.就在这儿。　C.在这儿。</div>
+        <div class="question">3.　A.请问，邮局在哪儿？　B.请问，银行在哪儿？　C.请问，医院在哪儿？</div>
+        <div class="question">4.　A.对不起，没关系。　B.对不起，我不知道。　C.谢谢，我不知道。</div>
+        <div class="question">5.　A.你去哪儿？　B.他去哪儿？　C.你在哪儿？</div>
+        <div class="question">6.　A.我去长城。　B.我去故宫。　C.我去天安门。</div>
+        <div class="question">7.　A.图书馆在哪儿？　B.你去哪儿？　C.你忙吗？</div>
+        <div class="question">8.　A.我去颐和园。　B.我去长城。　C.我去故宫。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1.　A.我不知道。　B.就在那儿。　C.谢谢。</div>
+        <div class="question">2.　A.对不起，我不知道。　B.就在那儿。　C.再见。</div>
+        <div class="question">3.　A.图书馆在哪儿？　B.我去天安门。　C.我不知道。</div>
+        <div class="question">4.　A.我在宿舍。　B.你好吗？　C.我去邮局。</div>
+        <div class="question">5.　A.就在那儿。　B.谢谢。　C.再见。</div>
+        <div class="question">6.　A.我知道。　B.我去。　C.我去哪儿。</div>
+        <div class="question">7.　A.你好！　B.再见！　C.谢谢！</div>
+        <div class="question">8.　A.就在这儿。　B.谢谢。　C.对不起，我不知道。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1.　A问图书馆在哪儿。　（√ ×）</div>
+        <div class="question">2.　B说“就在那儿”。　（√ ×）</div>
+        <div class="question">3.　B说“就在那儿”回答邮局的问题。　（√ ×）</div>
+        <div class="question">4.　B不知道邮局在哪儿。　（√ ×）</div>
+        <div class="question">5.　对话3里，A去天安门。　（√ ×）</div>
+        <div class="question">6.　A问“你去哪儿”。　（√ ×）</div>
+        <div class="question">7.　B去故宫。　（√ ×）</div>
+        <div class="question">8.　对话1里，B说“我不知道”。　（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. Where is the library?<br>A.就在那儿　B.我不知道　C.在邮局</div>
+        <div class="question">2. Who asks “你去哪儿”?<br>A.A　B.B　C.老师</div>
+        <div class="question">3. Where does B go?<br>A.图书馆　B.邮局　C.天安门</div>
+        <div class="question">4. What does A ask first?<br>A.你去哪儿？　B.图书馆在哪儿？　C.邮局在哪儿？</div>
+        <div class="question">5. Does A go to Tian&#x27;anmen?<br>A.是　B.不是　C.不知道</div>
+        <div class="question">6. What does B answer about the library?<br>A.对不起，我不知道。　B.就在那儿。　C.谢谢。</div>
+        <div class="question">7. What is A asking about?<br>A.邮局　B.银行　C.图书馆</div>
+        <div class="question">8. Who goes to Tian&#x27;anmen?<br>A.A　B.B　C.老师</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen and write the Chinese character you hear</div>
+        <div class="part-desc">（听录音，写出你听到的汉字）</div>
+        <div class="question">1.　<span class="blank-line"></span>书馆</div>
+        <div class="question">2.　<span class="blank-line"></span>问</div>
+        <div class="question">3.　图书馆在<span class="blank-line"></span>？</div>
+        <div class="question">4.　就在那<span class="blank-line"></span>。</div>
+        <div class="question">5.　<span class="blank-line"></span>局</div>
+        <div class="question">6.　我<span class="blank-line"></span>道。</div>
+        <div class="question">7.　我<span class="blank-line"></span>天安门。</div>
+        <div class="question">8.　医<span class="blank-line"></span></div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1.　请问</div>
+        <div class="question">2.　图书馆在哪儿</div>
+        <div class="question">3.　就在那儿</div>
+        <div class="question">4.　邮局在哪儿</div>
+        <div class="question">5.　对不起，我不知道</div>
+        <div class="question">6.　你去哪儿</div>
+        <div class="question">7.　我去天安门</div>
+        <div class="question">8.　谢谢</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Read the syllables aloud and pay attention to the changes of tones of “一”</div>
+        <div class="part-desc">（朗读词语，注意“一”的变调）</div>
+        <div class="question">1.　yíkuài　一块</div>
+        <div class="question">2.　yìfēn　一分</div>
+        <div class="question">3.　yìpíng　一瓶</div>
+        <div class="question">4.　yìběn　一本</div>
+        <div class="question">5.　yìtiān　一天</div>
+        <div class="question">6.　yìnián　一年</div>
+        <div class="question">7.　yíge　一个</div>
+        <div class="question">8.　yìbǎi　一百</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">1.　A：<span class="blank-line"></span>，图书馆在哪儿？B：就在那儿。</div>
+        <div class="question">2.　A：图书馆在<span class="blank-line"></span>？B：就在那儿。</div>
+        <div class="question">3.　A：请问，邮局在<span class="blank-line"></span>？B：对不起，我不知道。</div>
+        <div class="question">4.　A：对不起，我<span class="blank-line"></span>。B：没关系。</div>
+        <div class="question">5.　A：你去哪儿？B：我去<span class="blank-line"></span>。</div>
+        <div class="question">6.　A：你<span class="blank-line"></span>哪儿？B：我去邮局。</div>
+        <div class="question">7.　A：<span class="blank-line"></span>在哪儿？B：就在那儿。</div>
+        <div class="question">8.　A：你<span class="blank-line"></span>天安门吗？B：我去。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Make a short dialogue with the given words</div>
+        <div class="part-desc">（用所给词语编对话）</div>
+        <div class="question">1.　请问 / 图书馆 / 哪儿 / 就在那儿</div>
+        <div class="question">2.　邮局 / 哪儿 / 对不起 / 不知道</div>
+        <div class="question">3.　去 / 天安门 / 颐和园</div>
+        <div class="question">4.　银行 / 医院 / 商店 / 书店（在哪儿）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk with your partner</div>
+        <div class="part-desc">（自由表达，两人一组）</div>
+        <div class="question">1. Ask where the library is.（问图书馆在哪儿）</div>
+        <div class="question">2. Say you don&#x27;t know where the post office is.（说不知道邮局在哪儿）</div>
+        <div class="question">3. Say where you are going (to Tian&#x27;anmen).（说你去天安门）</div>
+        <div class="question">4. Ask a friend where he/she is going.（问朋友去哪儿）</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第6课　我来介绍一下儿</h2>
+        <div class="lesson-en">LET ME INTRODUCE</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1. A. 认识 B. 高兴 C. 学生 D. 介绍</div>
+        <div class="question">2. A. 认识 B. 介绍 C. 高兴 D. 学习</div>
+        <div class="question">3. A. 聪明 B. 漂亮 C. 学习 D. 可爱</div>
+        <div class="question">4. A. 学生 B. 可爱 C. 认识 D. 聪明</div>
+        <div class="question">5. A. 可爱 B. 漂亮 C. 高兴 D. 介绍</div>
+        <div class="question">6. A. 认识 B. 学习 C. 漂亮 D. 学生</div>
+        <div class="question">7. A. 高兴 B. 学生 C. 认识 D. 可爱</div>
+        <div class="question">8. A. 朋友 B. 介绍 C. 学生 D. 聪明</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1. A. hǎnyǔ B. hànyǔ C. Hànyǔ D. Hányǔ</div>
+        <div class="question">2. A. jiāoshì B. jiàoshī C. jiǎoshí D. jiǎoshi</div>
+        <div class="question">3. A. péngyǒu B. péngyou C. pěngyóu D. péngyòu</div>
+        <div class="question">4. A. piàoliàng B. piāoliang C. piàoliang D. piāoliáng</div>
+        <div class="question">5. A. Déguó B. Dèguó C. Dégūo D. Déguò</div>
+        <div class="question">6. A. Fàguó B. Fāguó C. Fǎguó D. Fáguó</div>
+        <div class="question">7. A. Hánguò B. Hánguó C. Hànguó D. Hānguó</div>
+        <div class="question">8. A. tōngxué B. tóngxuē C. tǒngxué D. tóngxué</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1. A. 我是德国留学生。 B. 我是法国留学生。 C. 我是韩国留学生。 D. 我不是德国留学生。</div>
+        <div class="question">2. A. 那不是我的词典。 B. 这是我的词典。 C. 这不是我的词典。 D. 那不是他的词典。</div>
+        <div class="question">3. A. 他是法国人。 B. 她是韩国人。 C. 他是德国人。 D. 她是法国人。</div>
+        <div class="question">4. A. 我们的教室很大。 B. 我们的教室不大。 C. 他们的教室不大。 D. 你们的教室不大。</div>
+        <div class="question">5. A. 你的书很新。 B. 他的书很新。 C. 我的书很新。 D. 我的书不新。</div>
+        <div class="question">6. A. 她可爱极了。 B. 她很漂亮。 C. 她漂亮极了。 D. 她不漂亮。</div>
+        <div class="question">7. A. 他是我同学。 B. 她是我朋友。 C. 他不是我朋友。 D. 他是我朋友。</div>
+        <div class="question">8. A. 我们学习汉语。 B. 你们学习汉语。 C. 他们学习汉语。 D. 我们不学习汉语。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1. A. 你好！ B. 再见。 C. 对不起。 D. 谢谢。</div>
+        <div class="question">2. A. 你去哪儿？ B. 这是词典。 C. 我也很高兴。 D. 我很帅。</div>
+        <div class="question">3. A. 这是汉语书。 B. 老师，你好！ C. 老师再见。 D. 老师是韩国人。</div>
+        <div class="question">4. A. 我的书不新。 B. 书很厚。 C. 你的书很新。 D. 他是我同学。</div>
+        <div class="question">5. A. 他也是留学生。 B. 她漂亮极了。 C. 他是我同学。 D. 这是教室。</div>
+        <div class="question">6. A. 这是词典。 B. 我学习汉语。 C. 他很帅。 D. 她很可爱。</div>
+        <div class="question">7. A. 你很帅。 B. 你很大。 C. 你很厚。 D. 你是词典。</div>
+        <div class="question">8. A. 我的书很新。 B. 他是法国人。 C. 对不起。 D. 你的词典很厚。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1. 保罗介绍西蒙。（√ ×）</div>
+        <div class="question">2. 西蒙说&quot;认识你很高兴&quot;。（√ ×）</div>
+        <div class="question">3. 这是B的词典。（√ ×）</div>
+        <div class="question">4. 同学的词典很厚。（√ ×）</div>
+        <div class="question">5. 那是B的女儿。（√ ×）</div>
+        <div class="question">6. 他的女儿不可爱。（√ ×）</div>
+        <div class="question">7. 西蒙是韩国人。（√ ×）</div>
+        <div class="question">8. 李英男是韩国人。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. Where is Paul from?
+   A. 德国 B. 法国 C. 韩国</div>
+        <div class="question">2. What does Paul study?
+   A. 词典 B. 书 C. 汉语</div>
+        <div class="question">3. Which class is Paul in?
+   A. B班 B. A班 C. D班</div>
+        <div class="question">4. What is the classroom like?
+   A. 很新 B. 很大 C. 不大</div>
+        <div class="question">5. Whose dictionary is it?
+   A. 老师的 B. 同学的 C. 保罗的</div>
+        <div class="question">6. How is the dictionary?
+   A. 很厚 B. 很新 C. 不大</div>
+        <div class="question">7. Who is from France?
+   A. 西蒙 B. 保罗 C. 李英男</div>
+        <div class="question">8. Who is from Korea?
+   A. 西蒙 B. 保罗 C. 李英男</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">（听录音，填空）</div>
+        <div class="question">1. 我学习<span class="blank-line"></span>。</div>
+        <div class="question">2. 我是<span class="blank-line"></span>留学生。</div>
+        <div class="question">3. 西蒙是<span class="blank-line"></span>人。</div>
+        <div class="question">4. 李英男是<span class="blank-line"></span>人。</div>
+        <div class="question">5. 教室不<span class="blank-line"></span>。</div>
+        <div class="question">6. 这是我<span class="blank-line"></span>的词典。</div>
+        <div class="question">7. 她漂亮<span class="blank-line"></span>。</div>
+        <div class="question">8. 她很<span class="blank-line"></span>，也很可爱。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">（听介绍，选择正确信息）</div>
+        <div class="question">1. 保罗是<span class="blank-line"></span>人。
+   A. 法国 B. 德国 C. 韩国</div>
+        <div class="question">2. 西蒙是<span class="blank-line"></span>人。
+   A. 德国 B. 韩国 C. 法国</div>
+        <div class="question">3. 李英男是<span class="blank-line"></span>人。
+   A. 法国 B. 韩国 C. 德国</div>
+        <div class="question">4. 保罗是<span class="blank-line"></span>的学生。
+   A. A班 B. B班 C. C班</div>
+        <div class="question">5. 西蒙是<span class="blank-line"></span>的学生。
+   A. C班 B. A班 C. B班</div>
+        <div class="question">6. 李英男是<span class="blank-line"></span>的学生。
+   A. A班 B. B班 C. C班</div>
+        <div class="question">7. 他们是<span class="blank-line"></span>。
+   A. 留学生 B. 老师 C. 词典</div>
+        <div class="question">8. 西蒙是保罗的<span class="blank-line"></span>。
+   A. 朋友 B. 老师 C. 爸爸</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">（听录音，填写学生证信息表）</div>
+        <div class="question">表格列：姓名 | 国籍 | 班级 | 学习</div>
+        <div class="question">行1：（空）</div>
+        <div class="question">行2：李英男</div>
+        <div class="question">行3：保罗</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">（听短文，选择正确答案）</div>
+        <div class="question">1. Where is Paul from?
+   A. 法国 B. 韩国 C. 德国 D. 李英男</div>
+        <div class="question">2. What does Paul study?
+   A. 书 B. 词典 C. 汉语 D. 老师</div>
+        <div class="question">3. Which class is Paul in?
+   A. B班 B. C班 C. D班 D. A班</div>
+        <div class="question">4. Who are Paul&#x27;s friends?
+   A. 老师和同学 B. 西蒙和李英男 C. 爸爸和妈妈 D. 词典和书</div>
+        <div class="question">5. Where is Simon from?
+   A. 德国 B. 韩国 C. 法国 D. 中国（zhōngguó）</div>
+        <div class="question">6. Where is Li Yingnan from?
+   A. 德国 B. 韩国 C. 法国 D. 美国（měiguó）</div>
+        <div class="question">7. Are Simon and Li Yingnan students?
+   A. 是 B. 不是 C. 是老师 D. 不知道</div>
+        <div class="question">8. Who is from Germany?
+   A. 西蒙 B. 李英男 C. 保罗 D. 老师</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1. 德国留学生</div>
+        <div class="question">2. 认识你很高兴</div>
+        <div class="question">3. 我来介绍一下儿</div>
+        <div class="question">4. 我们的教室</div>
+        <div class="question">5. 我的汉语书</div>
+        <div class="question">6. 她的词典很厚</div>
+        <div class="question">7. 漂亮极了</div>
+        <div class="question">8. 他很聪明，也很可爱</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">（用所给词语组成句子）</div>
+        <div class="question">1. 我/学生</div>
+        <div class="question">2. 他/不是/老师</div>
+        <div class="question">3. 这/我的/汉语书</div>
+        <div class="question">4. 那/不是/我的/词典</div>
+        <div class="question">5. 她/聪明</div>
+        <div class="question">6. 教室/大</div>
+        <div class="question">7. 她/漂亮/极了</div>
+        <div class="question">8. 我们/学习/汉语</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">（用&quot;的&quot;和形容词描述）</div>
+        <div class="question">1. 你的书（很新）</div>
+        <div class="question">2. 保罗的词典（很厚）</div>
+        <div class="question">3. 我们的教室（不大）</div>
+        <div class="question">4. 你的女儿（聪明、可爱）</div>
+        <div class="question">5. 你的朋友（漂亮/帅）</div>
+        <div class="question">6. 你们班（A班）</div>
+        <div class="question">7. 你的汉语书（新）</div>
+        <div class="question">8. 你的老师（好）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">（自由表达）</div>
+        <div class="question">1. Say your name and nationality.</div>
+        <div class="question">2. Say what you study.</div>
+        <div class="question">3. Say which class you are in.</div>
+        <div class="question">4. Introduce your teacher.</div>
+        <div class="question">5. Introduce your friend.</div>
+        <div class="question">6. Talk about your classroom.</div>
+        <div class="question">7. Introduce your family.</div>
+        <div class="question">8. Describe a person you like.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第7课　你身体好吗</h2>
+        <div class="lesson-en">HOW IS YOUR HEALTH</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1. A. 最近 B. 身体 C. 成绩 D. 努力</div>
+        <div class="question">2. A. 同屋 B. 食堂 C. 空调 D. 头发</div>
+        <div class="question">3. A. 成绩 B. 身体 C. 最近 D. 努力</div>
+        <div class="question">4. A. 食堂 B. 空调 C. 同屋 D. 眼睛</div>
+        <div class="question">5. A. 身体 B. 最近 C. 成绩 D. 努力</div>
+        <div class="question">6. A. 空调 B. 食堂 C. 头发 D. 同屋</div>
+        <div class="question">7. A. 眼睛 B. 个子 C. 头发 D. 最近</div>
+        <div class="question">8. A. 努力 B. 成绩 C. 身体 D. 最近</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1. A. shēntī B. shēntǐ C. shèntī D. shēntí</div>
+        <div class="question">2. A. chéngjì B. chéngjī C. chèngjì D. chéngji</div>
+        <div class="question">3. A. māmǎhūhu B. mǎmǎhūhū C. mǎmāhūhū D. mámǎhūhū</div>
+        <div class="question">4. A. fēichǎng B. fèicháng C. fēicháng D. fēichāng</div>
+        <div class="question">5. A. kōngtiǎo B. kòngtiáo C. kōngtiào D. kōngtiáo</div>
+        <div class="question">6. A. tōngwú B. tóngwù C. tóngwū D. tóngwēi</div>
+        <div class="question">7. A. zěnmeyáng B. zěnmeyàng C. zénmeyàng D. zěnmeyāng</div>
+        <div class="question">8. A. tóufā B. tóufá C. tóufǎ D. tóufǎ</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1. A. 我身体很好。 B. 我身体不太好。 C. 我身体不好。 D. 他身体很好。</div>
+        <div class="question">2. A. 我学习不忙。 B. 我学习比较忙。 C. 他学习比较忙。 D. 我学习非常忙。</div>
+        <div class="question">3. A. 我的宿舍很大。 B. 我的宿舍不太大。 C. 我的宿舍不大。 D. 你的宿舍不太大。</div>
+        <div class="question">4. A. 宿舍里没有空调。 B. 教室里有空调。 C. 宿舍里有空调。 D. 宿舍里没有电视。</div>
+        <div class="question">5. A. 我们学校留学生不多。 B. 他们学校留学生挺多的。 C. 我们学校留学生挺多的。 D. 我们学校留学生不太多。</div>
+        <div class="question">6. A. 我们学校食堂不错。 B. 我们学校食堂马马虎虎。 C. 他们学校食堂不错。 D. 我们学校食堂很大。</div>
+        <div class="question">7. A. 我有同屋。 B. 我没有同屋。 C. 我没有空调。 D. 他也没有同屋。</div>
+        <div class="question">8. A. 他学习不太努力。 B. 我学习非常努力。 C. 他学习非常努力。 D. 他学习不努力。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1. A. 我身体很好。 B. 我身体不太好。 C. 我是留学生。 D. 我学习忙。</div>
+        <div class="question">2. A. 我学习不忙。 B. 我学习比较忙。 C. 我成绩很好。 D. 我很忙，谢谢。</div>
+        <div class="question">3. A. 马马虎虎。 B. 很好。 C. 不好。 D. 他是法国人。</div>
+        <div class="question">4. A. 我们学习非常努力。 B. 他们学习非常努力。 C. 他们不努力。 D. 我不知道。</div>
+        <div class="question">5. A. 很大。 B. 不太大。 C. 没有。 D. 有空调。</div>
+        <div class="question">6. A. 有。 B. 没有。 C. 不太大。 D. 很好。</div>
+        <div class="question">7. A. 不多。 B. 挺多的。 C. 有一个。 D. 没有。</div>
+        <div class="question">8. A. 不错。 B. 很大。 C. 很近。 D. 马马虎虎。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1. 西蒙身体很好。（√ ×）</div>
+        <div class="question">2. 西蒙身体不太好。（√ ×）</div>
+        <div class="question">3. 西蒙学习不太忙。（√ ×）</div>
+        <div class="question">4. 西蒙学习比较忙。（√ ×）</div>
+        <div class="question">5. 西蒙的宿舍很大。（√ ×）</div>
+        <div class="question">6. 西蒙的宿舍里有空调。（√ ×）</div>
+        <div class="question">7. 他们学校留学生不多。（√ ×）</div>
+        <div class="question">8. 他们学校食堂不错。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. How is B&#x27;s health?
+   A. 很好 B. 不太好 C. 马马虎虎</div>
+        <div class="question">2. Is B busy with study?
+   A. 不忙 B. 比较忙 C. 非常忙</div>
+        <div class="question">3. Is the dorm big?
+   A. 很大 B. 不太大 C. 很小</div>
+        <div class="question">4. Is there an air-conditioner in the dorm?
+   A. 有 B. 没有 C. 不知道</div>
+        <div class="question">5. Are there many foreign students?
+   A. 不多 B. 挺多的 C. 没有</div>
+        <div class="question">6. How is the canteen?
+   A. 马马虎虎 B. 很大 C. 不错</div>
+        <div class="question">7. How far is the canteen from the classroom?
+   A. 很近 B. 很远 C. 不知道</div>
+        <div class="question">8. B is <span class="blank-line"></span>.
+   A. 老师 B. 留学生 C. 医生</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">（听录音，填空）</div>
+        <div class="question">1. 我身体很<span class="blank-line"></span>。</div>
+        <div class="question">2. 我学习比较<span class="blank-line"></span>。</div>
+        <div class="question">3. 他们学习非常<span class="blank-line"></span>。</div>
+        <div class="question">4. 我的宿舍不太<span class="blank-line"></span>。</div>
+        <div class="question">5. 宿舍里有<span class="blank-line"></span>。</div>
+        <div class="question">6. 我没有<span class="blank-line"></span>。</div>
+        <div class="question">7. 我们学校留学生挺<span class="blank-line"></span>的。</div>
+        <div class="question">8. 我们学校食堂<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">（听介绍，选择正确信息）</div>
+        <div class="question">1. Simon is <span class="blank-line"></span>.
+   A. 法国人 B. 德国人 C. 韩国人</div>
+        <div class="question">2. How is Simon&#x27;s health?
+   A. 很好 B. 不太好 C. 马马虎虎</div>
+        <div class="question">3. How is Simon&#x27;s study?
+   A. 不太忙 B. 比较忙 C. 非常努力</div>
+        <div class="question">4. Is Simon&#x27;s dorm big?
+   A. 很大 B. 不太大 C. 很小</div>
+        <div class="question">5. Is there an air-conditioner?
+   A. 有 B. 没有 C. 不知道</div>
+        <div class="question">6. Does Simon have a roommate?
+   A. 有 B. 没有 C. 有两个</div>
+        <div class="question">7. Are there many foreign students?
+   A. 不多 B. 挺多的 C. 没有</div>
+        <div class="question">8. How is the canteen?
+   A. 不错 B. 很大 C. 马马虎虎</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">（听录音，填写信息表）</div>
+        <div class="question">表格列：姓名 | 身体 | 学习 | 同屋 | 宿舍空调</div>
+        <div class="question">行1：（空）</div>
+        <div class="question">行2：西蒙</div>
+        <div class="question">行3：莉莉</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">（听短文，选择正确答案）</div>
+        <div class="question">1. Who is Simon?
+   A. 法国留学生 B. 德国留学生 C. 韩国留学生</div>
+        <div class="question">2. How is Simon&#x27;s health?
+   A. 很好 B. 不太好 C. 不好</div>
+        <div class="question">3. Is Simon busy with study?
+   A. 不忙 B. 比较忙 C. 非常忙</div>
+        <div class="question">4. Does Simon have a roommate?
+   A. 有 B. 没有 C. 不知道</div>
+        <div class="question">5. What is Simon&#x27;s dorm like?
+   A. 很大 B. 不太大 C. 很小</div>
+        <div class="question">6. Is there an air-conditioner?
+   A. 有 B. 没有 C. 不知道</div>
+        <div class="question">7. Are there many foreign students?
+   A. 不多 B. 挺多的 C. 没有</div>
+        <div class="question">8. How is the canteen?
+   A. 马马虎虎 B. 不错 C. 很近</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1. 你身体好吗？</div>
+        <div class="question">2. 我身体很好。</div>
+        <div class="question">3. 你学习忙吗？</div>
+        <div class="question">4. 我学习比较忙。</div>
+        <div class="question">5. 你的宿舍大不大？</div>
+        <div class="question">6. 宿舍里有没有空调？</div>
+        <div class="question">7. 我们学校留学生挺多的。</div>
+        <div class="question">8. 我们学校食堂不错。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">（用所给词语组成句子）</div>
+        <div class="question">1. 我/身体/很好</div>
+        <div class="question">2. 你/身体/好/吗</div>
+        <div class="question">3. 我/学习/比较/忙</div>
+        <div class="question">4. 他/学习/非常/努力</div>
+        <div class="question">5. 我的/宿舍/不太/大</div>
+        <div class="question">6. 宿舍/里/有/空调/吗</div>
+        <div class="question">7. 我/没有/同屋</div>
+        <div class="question">8. 学校/食堂/不错</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">（用&quot;的&quot;和形容词描述）</div>
+        <div class="question">1. 你的身体（很好）</div>
+        <div class="question">2. 你的学习（比较忙）</div>
+        <div class="question">3. 你的成绩（马马虎虎）</div>
+        <div class="question">4. 你的宿舍（不太大）</div>
+        <div class="question">5. 你们学校留学生（挺多）</div>
+        <div class="question">6. 你们学校食堂（不错）</div>
+        <div class="question">7. 莉莉的头发（长）</div>
+        <div class="question">8. 保罗的个子（高）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">（自由表达）</div>
+        <div class="question">1. Say how you are.</div>
+        <div class="question">2. Say how your study is going.</div>
+        <div class="question">3. Say how your grades are.</div>
+        <div class="question">4. Ask about a friend&#x27;s health.</div>
+        <div class="question">5. Ask if there is an air-conditioner in your dorm.</div>
+        <div class="question">6. Ask about the canteen.</div>
+        <div class="question">7. Describe your school.</div>
+        <div class="question">8. Say whether you have a roommate.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第8课　你是哪国人</h2>
+        <div class="lesson-en">WHICH COUNTRY ARE YOU FROM</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">（听录音，选出你听到的词语）</div>
+        <div class="question">1. A. 名字 B. 号码 C. 房间 D. 电话</div>
+        <div class="question">2. A. 号码 B. 房间 C. 电话 D. 休息</div>
+        <div class="question">3. A. 电话 B. 名字 C. 房间 D. 晚上</div>
+        <div class="question">4. A. 房间 B. 号码 C. 名字 D. 下午</div>
+        <div class="question">5. A. 睡觉 B. 下午 C. 休息 D. 号码</div>
+        <div class="question">6. A. 名字 B. 下午 C. 晚上 D. 休息</div>
+        <div class="question">7. A. 下午 B. 晚上 C. 睡觉 D. 名字</div>
+        <div class="question">8. A. 晚上 B. 休息 C. 号码 D. 房间</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">（听录音，选出正确的拼音）</div>
+        <div class="question">1. A. míngzī B. míngzi C. míngzhǐ D. míngzi</div>
+        <div class="question">2. A. fāngjiān B. fángjiàn C. fángjiān D. fǎngjiān</div>
+        <div class="question">3. A. diǎnhuà B. diànhuà C. diānhuà D. diànhuā</div>
+        <div class="question">4. A. xiǎwǔ B. xiàwǔ C. xiàwù D. xiàwù</div>
+        <div class="question">5. A. xiùxī B. xiùxí C. xiǔxī D. xiùxi</div>
+        <div class="question">6. A. chǎngchǎng B. chāngchāng C. chángcháng D. chángchàng</div>
+        <div class="question">7. A. guǐxìng B. guǐxīng C. guīxīng D. guixing</div>
+        <div class="question">8. A. wǎngshang B. wánshàng C. wǎnshang D. wǎnshāng</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">（听录音，选出你听到的句子）</div>
+        <div class="question">1. A. 你是哪国人？ B. 你是哪儿人？ C. 你是中国人？ D. 你是哪国学生？</div>
+        <div class="question">2. A. 我叫保罗。 B. 我姓保罗。 C. 我叫保尔。 D. 你是保罗吗？</div>
+        <div class="question">3. A. 请问，你贵姓？ B. 请问，您贵姓？ C. 请问，你姓什么名字？ D. 我贵姓王。</div>
+        <div class="question">4. A. 我在北京大学学习。 B. 我在北京语言大学学习。 C. 我在北京学习汉语。 D. 我在北京语言大学住。</div>
+        <div class="question">5. A. 我们班有五个学生。 B. 我们班有五十个学生。 C. 我们班有十五个学生。 D. 你们班有十五个学生。</div>
+        <div class="question">6. A. 我的房间是190号。 B. 我的房间是109号。 C. 我的房间是119号。 D. 我的电话是109号。</div>
+        <div class="question">7. A. 有时候在宿舍休息，有时候去图书馆学习。 B. 常常在宿舍休息。 C. 有时候去图书馆休息。 D. 每天下午在宿舍学习。</div>
+        <div class="question">8. A. 我跟我的中国朋友一起学习。 B. 我跟我的法国朋友一起学习。 C. 我跟我朋友一起休息。 D. 他跟我的中国朋友一起学习。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">（听录音，选出合适的应答）</div>
+        <div class="question">1. A. 我是德国人。 B. 我是老师。 C. 我姓王。 D. 我叫保罗。</div>
+        <div class="question">2. A. 我姓王。 B. 我叫保罗。 C. 我是德国人。 D. 我住七号楼。</div>
+        <div class="question">3. A. 我贵姓王。 B. 我叫王。 C. 我姓王。 D. 我是王。</div>
+        <div class="question">4. A. 我学习汉语。 B. 我在北京语言大学学习。 C. 我在房间休息。 D. 我跟朋友一起学习。</div>
+        <div class="question">5. A. 我有十五个学生。 B. 我们班有五个学生。 C. 十五位老师。 D. 我们班有十五个学生。</div>
+        <div class="question">6. A. 我们教三位老师。 B. 三位老师教我们。 C. 有三个人。 D. 三本词典。</div>
+        <div class="question">7. A. 我住109号。 B. 我是德国人。 C. 我住留学生宿舍。 D. 我在北京学习。</div>
+        <div class="question">8. A. 我姓王。 B. 82307531。 C. 我住七号楼。 D. 我学习汉语。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">（听对话，判断正误）</div>
+        <div class="question">1. 保罗是德国人。（√ ×）</div>
+        <div class="question">2. 保罗是法国人。（√ ×）</div>
+        <div class="question">3. 王老师姓王。（√ ×）</div>
+        <div class="question">4. 保罗姓王。（√ ×）</div>
+        <div class="question">5. 保罗在北京大学学习。（√ ×）</div>
+        <div class="question">6. 保罗的班有十五个学生。（√ ×）</div>
+        <div class="question">7. 保罗住七号楼。（√ ×）</div>
+        <div class="question">8. 保罗的电话号码是82307531。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">（听对话，选择正确答案）</div>
+        <div class="question">1. Which country is Paul from?
+   A. 德国人 B. 法国人 C. 韩国人</div>
+        <div class="question">2. What is Paul&#x27;s name?
+   A. 王小雨 B. 保罗 C. 张</div>
+        <div class="question">3. Where does Paul study?
+   A. 北京大学 B. 北京语言大学 C. 留学生宿舍</div>
+        <div class="question">4. How many students are in Paul&#x27;s class?
+   A. 五个 B. 十五个 C. 五十个</div>
+        <div class="question">5. How many teachers teach Paul?
+   A. 三位 B. 两位 C. 一位</div>
+        <div class="question">6. Where does Paul live?
+   A. 留学生宿舍 B. 教学楼 C. 图书馆</div>
+        <div class="question">7. Which building does Paul live in?
+   A. 五号楼 B. 九号楼 C. 七号楼</div>
+        <div class="question">8. What is Paul&#x27;s room number?
+   A. 109 B. 190 C. 119</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">（听录音，填空）</div>
+        <div class="question">1. 你是哪<span class="blank-line"></span>人？</div>
+        <div class="question">2. 我叫<span class="blank-line"></span>。</div>
+        <div class="question">3. 请问，您<span class="blank-line"></span>？</div>
+        <div class="question">4. 我在北京语言大学<span class="blank-line"></span>。</div>
+        <div class="question">5. 我们班有十五个<span class="blank-line"></span>。</div>
+        <div class="question">6. 我住留学生<span class="blank-line"></span>。</div>
+        <div class="question">7. 我的房间是<span class="blank-line"></span>号。</div>
+        <div class="question">8. 我<span class="blank-line"></span>我的中国朋友一起学习。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">（听介绍，选择正确信息）</div>
+        <div class="question">1. Which country is Paul from?
+   A. 德国人 B. 法国人 C. 韩国人</div>
+        <div class="question">2. What does Paul do?
+   A. 中学教师 B. 大学生 C. 医生</div>
+        <div class="question">3. Where does Paul study?
+   A. 北京大学 B. 北京语言大学 C. 德国</div>
+        <div class="question">4. Which building does Paul live in?
+   A. 五号楼 B. 七号楼 C. 九号楼</div>
+        <div class="question">5. What is Paul&#x27;s room number?
+   A. 190 B. 119 C. 109</div>
+        <div class="question">6. What is Paul&#x27;s phone number?
+   A. 82307531 B. 82307513 C. 83207531</div>
+        <div class="question">7. How many students are in Paul&#x27;s class?
+   A. 五个 B. 十五个 C. 五十个</div>
+        <div class="question">8. How many teachers teach Paul?
+   A. 两位 B. 三位 C. 四位</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">（听录音，填写信息表）</div>
+        <div class="question">表格列：姓名 | 国籍 | 职业 | 住址 | 电话</div>
+        <div class="question">行1：（空）</div>
+        <div class="question">行2：田中太郎</div>
+        <div class="question">行3：保罗</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">（听短文，选择正确答案）</div>
+        <div class="question">1. Who is Paul?
+   A. 德国人 B. 法国人 C. 韩国人</div>
+        <div class="question">2. How old is Paul?
+   A. 二十六岁 B. 三十六岁 C. 四十六岁</div>
+        <div class="question">3. What does Paul do?
+   A. 医生 B. 中学教师 C. 学生</div>
+        <div class="question">4. Where does Paul study?
+   A. 北京大学 B. 北京语言大学 C. 德国</div>
+        <div class="question">5. What is Paul&#x27;s room number?
+   A. 190 B. 109 C. 119</div>
+        <div class="question">6. How many students are in Paul&#x27;s class?
+   A. 十五个 B. 五个 C. 五十个</div>
+        <div class="question">7. What does Paul do in the afternoon?
+   A. 有时候休息，有时候学习 B. 常常睡觉 C. 一直学习</div>
+        <div class="question">8. Where does Paul study sometimes?
+   A. 图书馆 B. 教室 C. 宿舍</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">（跟读）</div>
+        <div class="question">1. 你是哪国人？</div>
+        <div class="question">2. 我叫保罗。</div>
+        <div class="question">3. 请问，您贵姓？</div>
+        <div class="question">4. 我姓王。</div>
+        <div class="question">5. 我在北京语言大学学习。</div>
+        <div class="question">6. 我们班有十五个学生。</div>
+        <div class="question">7. 我住留学生宿舍。</div>
+        <div class="question">8. 你的电话号码是多少？</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">（用所给词语组成句子）</div>
+        <div class="question">1. 在/我/房间/休息/下午</div>
+        <div class="question">2. 他/宿舍/电视/看/在/晚上</div>
+        <div class="question">3. 保罗/朋友/跟/一起/学习</div>
+        <div class="question">4. 莉莉/同屋/跟/书店(shūdiàn)/去/一起</div>
+        <div class="question">5. 你/哪国人/是</div>
+        <div class="question">6. 我/北京语言大学/在/学习</div>
+        <div class="question">7. 你们班/多少/学生/有</div>
+        <div class="question">8. 电话/号码/多少/你的/是</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">（用&quot;的&quot;和形容词描述）</div>
+        <div class="question">1. 保罗（德国人）</div>
+        <div class="question">2. 你（学习汉语）</div>
+        <div class="question">3. 你（住留学生宿舍）</div>
+        <div class="question">4. 你的房间（109号）</div>
+        <div class="question">5. 你们班（十五个学生）</div>
+        <div class="question">6. 你的电话号码（82307531）</div>
+        <div class="question">7. 每天下午（有时候休息，有时候学习）</div>
+        <div class="question">8. 你（跟中国朋友一起学习）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">（补全对话）</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">（自由表达）</div>
+        <div class="question">1. Say your name.</div>
+        <div class="question">2. Say which country you are from.</div>
+        <div class="question">3. Ask someone&#x27;s surname politely.</div>
+        <div class="question">4. Say where you live.</div>
+        <div class="question">5. Say your phone number.</div>
+        <div class="question">6. Ask how many students are in the class.</div>
+        <div class="question">7. Say what you do in the afternoon.</div>
+        <div class="question">8. Say who you study with.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第9课　你家有几口人</h2>
+        <div class="lesson-en">HOW MANY PEOPLE ARE THERE IN YOUR FAMILY</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.家  B.想  C.岁  D.口</div>
+        <div class="question">2. A.记者  B.职员  C.医生  D.经理</div>
+        <div class="question">3. A.父母  B.父亲  C.母亲  D.兄弟</div>
+        <div class="question">4. A.医院  B.名片  C.今年  D.公司</div>
+        <div class="question">5. A.儿子  B.孩子  C.女儿  D.名字</div>
+        <div class="question">6. A.今年  B.年龄  C.工作  D.年纪</div>
+        <div class="question">7. A.名字  B.明白  C.秘密  D.名片</div>
+        <div class="question">8. A.多  B.真  C.很  D.岁</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.xiǎng  B.xiāng  C.xuǎng  D.xáng</div>
+        <div class="question">2. A.yīshěn  B.yīshēng  C.yìshēng  D.yīsēng</div>
+        <div class="question">3. A.fǔqín  B.fūqín  C.fùqín  D.fùqīng</div>
+        <div class="question">4. A.gòngsī  B.gōngsī  C.gōngshì  D.gōngxī</div>
+        <div class="question">5. A.hàizi  B.háizi  C.háizǐ  D.hēizi</div>
+        <div class="question">6. A.niánjì  B.nǎnjì  C.niánjí  D.niànjì</div>
+        <div class="question">7. A.mīmī  B.mímī  C.mìmì  D.mìmǐ</div>
+        <div class="question">8. A.shǒuhuòyuán  B.shòuhuàyuán  C.shòuhuòyuán  D.shòuhuòyán</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.你家有多少人？  B.你家有几口人？  C.你家有什么人？  D.我家有五口人。</div>
+        <div class="question">2. A.你常常想家吗？  B.你想家不想家？  C.你想不想家  D.你不想家吗？</div>
+        <div class="question">3. A.我是独生子。  B.我是女儿。  C.我是独生女。  D.我有姐妹。</div>
+        <div class="question">4. A.我母亲今年六十岁。  B.我父亲今年五十八岁。  C.我父亲六十多岁了。  D.我父亲今年六十岁。</div>
+        <div class="question">5. A.你做什么工作？  B.你在哪儿工作？  C.你是做什么工作的？  D.你工作忙吗？</div>
+        <div class="question">6. A.他们都在公司。  B.他们不是职员。  C.他们都是公司职员。  D.他们都在医院。</div>
+        <div class="question">7. A.这是谁的名片？  B.这是谁的儿子？  C.这是谁的家？  D.这是谁的孩子？</div>
+        <div class="question">8. A.这孩子真高。  B.这孩子真聪明。  C.这孩子真可爱。  D.这孩子很可爱。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.我今年五岁。  B.我家有五口人。  C.我家在北京。  D.我是独生女。</div>
+        <div class="question">2. A.我不想工作。  B.当然想。  C.我不在家。  D.我常常工作。</div>
+        <div class="question">3. A.他是医生。  B.他在家。  C.他在医院工作。  D.他工作很忙。</div>
+        <div class="question">4. A.我是记者。  B.我今年三十岁。  C.我在公司工作。  D.我工作很忙。</div>
+        <div class="question">5. A.她在家。  B.她是医生。  C.她是我母亲。  D.她不工作。</div>
+        <div class="question">6. A.我今年二十岁。  B.他们都很健康。  C.我父亲六十岁，我母亲五十八。  D.我父母在家。</div>
+        <div class="question">7. A.我有一个孩子。  B.他们都是公司职员。  C.我当然有。  D.我没有兄弟姐妹，我是独生女。</div>
+        <div class="question">8. A.他是我大哥的儿子。  B.今年五岁。  C.他是孩子。  D.我不知道。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1. 直美想家。（√ ×）</div>
+        <div class="question">2. 直美家有四口人。（√ ×）</div>
+        <div class="question">3. 直美有两个哥哥。（√ ×）</div>
+        <div class="question">4. 直美的父亲是医生。（√ ×）</div>
+        <div class="question">5. 直美的母亲不工作。（√ ×）</div>
+        <div class="question">6. 直美的哥哥都是记者。（√ ×）</div>
+        <div class="question">7. 直美是独生女。（√ ×）</div>
+        <div class="question">8. 直美的父亲今年六十岁。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. How many people are there in Zhimei&#x27;s family?
+   A.三口人  B.五口人  C.四口人</div>
+        <div class="question">2. Who is in Zhimei&#x27;s family?
+   A.爸爸、妈妈、一个哥哥和她  B.爸爸、妈妈、两个哥哥和她  C.爸爸、妈妈和她</div>
+        <div class="question">3. What does Zhimei&#x27;s father do?
+   A.医生  B.职员  C.记者</div>
+        <div class="question">4. What does Zhimei&#x27;s mother do?
+   A.医生  B.职员  C.她不工作</div>
+        <div class="question">5. What do Zhimei&#x27;s brothers do?
+   A.医生  B.公司职员  C.记者</div>
+        <div class="question">6. How old is Zhimei&#x27;s father?
+   A.六十岁  B.五十八岁  C.三十二岁</div>
+        <div class="question">7. How old is Zhimei&#x27;s mother?
+   A.六十岁  B.五十八岁  C.二十九岁</div>
+        <div class="question">8. How old is Zhimei&#x27;s second brother?
+   A.三十二岁  B.二十九岁  C.五岁</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1. 你家有<span class="blank-line"></span>人？</div>
+        <div class="question">2. 我当然<span class="blank-line"></span>家。</div>
+        <div class="question">3. 我是<span class="blank-line"></span>女。</div>
+        <div class="question">4. 他在医院工作，他是<span class="blank-line"></span>。</div>
+        <div class="question">5. 他们都是公司<span class="blank-line"></span>。</div>
+        <div class="question">6. 我父亲今年<span class="blank-line"></span>岁。</div>
+        <div class="question">7. 这是我大哥的<span class="blank-line"></span>。</div>
+        <div class="question">8. 这孩子真<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. Which country is Zhimei from?
+   A.日本人  B.中国人  C.韩国人</div>
+        <div class="question">2. How many people are there in Zhimei&#x27;s family?
+   A.三口人  B.四口人  C.五口人</div>
+        <div class="question">3. What does Zhimei&#x27;s father do?
+   A.医生  B.职员  C.记者</div>
+        <div class="question">4. Does Zhimei&#x27;s mother work?
+   A.工作  B.不工作  C.不知道</div>
+        <div class="question">5. How many brothers does Zhimei have?
+   A.一个  B.两个  C.三个</div>
+        <div class="question">6. What do Zhimei&#x27;s brothers do?
+   A.医生  B.记者  C.公司职员</div>
+        <div class="question">7. Does Zhimei have brothers or sisters?
+   A.有  B.没有  C.不知道</div>
+        <div class="question">8. Where does Zhimei study now?
+   A.日本  B.中国  C.美国</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表列：姓名 | 国家 | 几口人 | 爸爸的工作 | 妈妈的工作</div>
+        <div class="question">行1：直美</div>
+        <div class="question">行2：小叶</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. How many people are there in Zhimei&#x27;s family?
+   A.四口人  B.五口人  C.六口人</div>
+        <div class="question">2. How old is Zhimei&#x27;s father?
+   A.六十岁  B.五十八岁  C.三十二岁</div>
+        <div class="question">3. What does Zhimei&#x27;s father do?
+   A.医生  B.职员  C.记者</div>
+        <div class="question">4. How old is Zhimei&#x27;s mother?
+   A.六十岁  B.五十八岁  C.二十九岁</div>
+        <div class="question">5. What does Zhimei&#x27;s mother do?
+   A.医生  B.职员  C.她不工作</div>
+        <div class="question">6. How old is Zhimei&#x27;s eldest brother?
+   A.三十二岁  B.二十九岁  C.二十岁</div>
+        <div class="question">7. What do Zhimei&#x27;s brothers do?
+   A.医生  B.公司职员  C.记者</div>
+        <div class="question">8. What does Zhimei do in China?
+   A.工作  B.学习汉语  C.看病</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1. 你家有几口人？</div>
+        <div class="question">2. 我家有五口人。</div>
+        <div class="question">3. 你想不想家？</div>
+        <div class="question">4. 我当然想家。</div>
+        <div class="question">5. 你父亲在哪儿工作？</div>
+        <div class="question">6. 他在医院工作。</div>
+        <div class="question">7. 你做什么工作？</div>
+        <div class="question">8. 我是记者。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1. 你／家／有／几口人</div>
+        <div class="question">2. 我／家／有／五口人</div>
+        <div class="question">3. 我／没有／兄弟姐妹</div>
+        <div class="question">4. 我／是／独生女</div>
+        <div class="question">5. 你／父亲／在哪儿／工作</div>
+        <div class="question">6. 他／是／医生</div>
+        <div class="question">7. 你／父母／今年／多大年纪</div>
+        <div class="question">8. 这／是／谁／的孩子</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1. 我的家庭（五口人）</div>
+        <div class="question">2. 我的爸爸（医生）</div>
+        <div class="question">3. 我的妈妈（不工作）</div>
+        <div class="question">4. 我的哥哥（公司职员）</div>
+        <div class="question">5. 我（独生女）</div>
+        <div class="question">6. 我的父亲（六十岁）</div>
+        <div class="question">7. 我的大哥（三十二岁）</div>
+        <div class="question">8. 这个孩子（五岁）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Say how many people are in your family.</div>
+        <div class="question">2. Say who is in your family.</div>
+        <div class="question">3. Ask a friend if he or she misses home.</div>
+        <div class="question">4. Ask a friend about his or her parents&#x27; jobs.</div>
+        <div class="question">5. Say what your father does.</div>
+        <div class="question">6. Ask an elder&#x27;s age politely.</div>
+        <div class="question">7. Say you are an only child.</div>
+        <div class="question">8. Ask whose child this is.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第10课　现在几点</h2>
+        <div class="lesson-en">WHAT TIME IS IT NOW</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.见面  B.现在  C.今天  D.星期</div>
+        <div class="question">2. A.生日  B.早饭  C.晚饭  D.午饭</div>
+        <div class="question">3. A.下课  B.出发  C.上课  D.见面</div>
+        <div class="question">4. A.门口  B.时候  C.生日  D.星期</div>
+        <div class="question">5. A.见面  B.起床  C.出发  D.上课</div>
+        <div class="question">6. A.上午  B.时间  C.时候  D.今天</div>
+        <div class="question">7. A.起床  B.睡觉  C.上课  D.吃饭</div>
+        <div class="question">8. A.现在  B.今天  C.生日  D.明天</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.xiǎzài  B.xiànzài  C.xiànzhài  D.xiánzài</div>
+        <div class="question">2. A.zhǎofàn  B.zǎofàn  C.zǎofāng  D.zaofàn</div>
+        <div class="question">3. A.shǎng kè  B.shàng gè  C.shàng kè  D.sàng kè</div>
+        <div class="question">4. A.xīnqī  B.xīngqí  C.shēngqī  D.xīngqī</div>
+        <div class="question">5. A.chūfā  B.chǔfā  C.cūfā  D.chúfā</div>
+        <div class="question">6. A.shíhòu  B.shíhou  C.síhou  D.shíhou</div>
+        <div class="question">7. A.shuìjiào  B.suìjiào  C.shuìjiào  D.shuìjiǎo</div>
+        <div class="question">8. A.shēngrí  B.shēngrì  C.shěngrì  D.sēngrì</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.现在几月？  B.现在几点？  C.现在几号？  D.现在星期几？</div>
+        <div class="question">2. A.现在七点半。  B.现在八点一刻。  C.现在七点。  D.现在七点一刻。</div>
+        <div class="question">3. A.我七点吃早饭。  B.我八点吃早饭。  C.我七点半吃早饭。  D.我七点半吃午饭。</div>
+        <div class="question">4. A.我从上午九点到十二点上课。  B.我从上午八点到十一点上课。  C.我从下午八点到十二点上课。  D.我从上午八点到十二点上课。</div>
+        <div class="question">5. A.今天几点？  B.今天几月几号？  C.今天星期几？  D.今天几月？</div>
+        <div class="question">6. A.今天星期五。  B.今天星期六。  C.今天星期二。  D.今天星期三。</div>
+        <div class="question">7. A.二十五号是星期六吧？  B.二十五号是星期五吧？  C.二十五号是星期一一吧？  D.二十五号是星期天吧？</div>
+        <div class="question">8. A.差五分九点，我在教室门口等你。  B.差五分八点，我在学校门口等你。
+   C.差五分九点，我在学校门口吃饭。  D.差五分九点，我在学校门口等你。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.现在七点半。  B.现在七月二十二号。  C.今天星期三。  D.现在七点一刻。</div>
+        <div class="question">2. A.我七点半吃午饭。  B.我七点半吃早饭。  C.我七点半上课。  D.我八点吃早饭。</div>
+        <div class="question">3. A.我从上午八点到十二点上课。  B.我从上午九点到十二点上课。  C.我八点上课。  D.我从上午八点到十二点吃饭。</div>
+        <div class="question">4. A.今天星期三。  B.今天七月二十二号。  C.现在七点一刻。  D.今天七月二号。</div>
+        <div class="question">5. A.今天七月二十二号。  B.今天星期六。  C.今天星期三。  D.现在三点。</div>
+        <div class="question">6. A.我不知道。  B.二十五号是星期天。  C.二十五号不是星期天，是星期六。  D.二十五号是星期五。</div>
+        <div class="question">7. A.差五分九点，在学校门口。  B.差五分八点，在学校门口。  C.九点，在学校门口。  D.差五分九点，在家。</div>
+        <div class="question">8. A.今天是十月十号。  B.我的生日是明天。  C.我的生日是十月十号。  D.我十月十号上班。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1. 现在七点一刻。（√ ×）</div>
+        <div class="question">2. 莉莉七点半吃早饭。（√ ×）</div>
+        <div class="question">3. 莉莉从上午八点到十二点上课。（√ ×）</div>
+        <div class="question">4. 今天七月二十二号。（√ ×）</div>
+        <div class="question">5. 今天星期五。（√ ×）</div>
+        <div class="question">6. 二十五号是星期天。（√ ×）</div>
+        <div class="question">7. 星期天莉莉和小叶去颐和园（Yíhé Yuán）。（√ ×）</div>
+        <div class="question">8. 他们上午八点出发。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. What time is it now?
+   A.七点  B.七点一刻  C.七点半</div>
+        <div class="question">2. When does Lili eat breakfast?
+   A.七点  B.七点一刻  C.七点半</div>
+        <div class="question">3. When does Lili have class?
+   A.上午八点到十二点  B.下午八点到十二点  C.上午九点到十二点</div>
+        <div class="question">4. What is the date today?
+   A.七月十二号  B.七月二十二号  C.六月二十二号</div>
+        <div class="question">5. What day is it today?
+   A.星期三  B.星期五  C.星期六</div>
+        <div class="question">6. What day is the 25th?
+   A.星期天  B.星期六  C.星期五</div>
+        <div class="question">7. When do they set out?
+   A.上午八点  B.上午九点  C.上午十点</div>
+        <div class="question">8. Where do they meet?
+   A.学校门口  B.颐和园门口  C.教室门口</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1. 现在几<span class="blank-line"></span>？</div>
+        <div class="question">2. 现在七点一<span class="blank-line"></span>。</div>
+        <div class="question">3. 我七点<span class="blank-line"></span>吃早饭。</div>
+        <div class="question">4. 我从上午八点<span class="blank-line"></span>十二点上课。</div>
+        <div class="question">5. 今天七月二十二<span class="blank-line"></span>。</div>
+        <div class="question">6. 今天星期<span class="blank-line"></span>。</div>
+        <div class="question">7. 差五分九点，我在学校<span class="blank-line"></span>等你。</div>
+        <div class="question">8. 你的<span class="blank-line"></span>是几月几号？</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. When does Lili eat breakfast?
+   A.七点  B.七点半  C.八点</div>
+        <div class="question">2. When does Lili have class?
+   A.七点半  B.八点  C.九点</div>
+        <div class="question">3. When does Lili finish class in the morning?
+   A.十点  B.十一点  C.十二点</div>
+        <div class="question">4. When does Lili eat lunch?
+   A.十一点  B.十二点  C.一点</div>
+        <div class="question">5. What is the date today?
+   A.七月二十二号  B.七月二十号  C.六月二十二号</div>
+        <div class="question">6. What day is it today?
+   A.星期三  B.星期四  C.星期六</div>
+        <div class="question">7. Where does Lili go on Sunday?
+   A.学校  B.颐和园（Yíhé Yuán）  C.家</div>
+        <div class="question">8. When do they set out?
+   A.八点  B.九点  C.十点</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表列：姓名 | 起床时间 | 吃早饭时间 | 上课时间 | 吃午饭时间</div>
+        <div class="question">行1：莉莉</div>
+        <div class="question">行2：小叶</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. When does Lili get up?
+   A.七点  B.六点四十五  C.七点半</div>
+        <div class="question">2. When does Lili eat breakfast?
+   A.六点四十五  B.八点  C.七点半</div>
+        <div class="question">3. When does Lili have class in the morning?
+   A.八点  B.七点  C.九点</div>
+        <div class="question">4. When does Lili eat lunch?
+   A.十一点  B.一点  C.十二点</div>
+        <div class="question">5. What is the date today?
+   A.七月二十二号  B.七月十二号  C.六月二十二号</div>
+        <div class="question">6. What day is it today?
+   A.星期一  B.星期六  C.星期三</div>
+        <div class="question">7. Where does Lili go on Sunday?
+   A.学校  B.颐和园（Yíhé Yuán）  C.商店</div>
+        <div class="question">8. When do they meet?
+   A.九点  B.八点  C.十点</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1. 现在几点？</div>
+        <div class="question">2. 现在七点一刻。</div>
+        <div class="question">3. 你几点吃早饭？</div>
+        <div class="question">4. 我七点半吃早饭。</div>
+        <div class="question">5. 今天几月几号？</div>
+        <div class="question">6. 今天星期三。</div>
+        <div class="question">7. 咱们几点见面？</div>
+        <div class="question">8. 差五分九点，我在学校门口等你。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1. 现在／几点</div>
+        <div class="question">2. 我／七点半／吃／早饭</div>
+        <div class="question">3. 你／什么时候／上课</div>
+        <div class="question">4. 我／从／上午八点／到／十二点／上课</div>
+        <div class="question">5. 今天／几月／几号</div>
+        <div class="question">6. 今天／星期几</div>
+        <div class="question">7. 咱们／几点／见面</div>
+        <div class="question">8. 我／在／学校门口／等／你</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1. 现在的时间（七点一刻）</div>
+        <div class="question">2. 你吃早饭的时间（七点半）</div>
+        <div class="question">3. 你上课的时间（上午八点到十二点）</div>
+        <div class="question">4. 今天的日期（七月二十二号）</div>
+        <div class="question">5. 今天（星期三）</div>
+        <div class="question">6. 出发的时间（上午九点）</div>
+        <div class="question">7. 见面的地点（学校门口）</div>
+        <div class="question">8. 你的生日（十月十号）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Ask what time it is now.</div>
+        <div class="question">2. Say the time (7:15).</div>
+        <div class="question">3. Ask when someone eats breakfast.</div>
+        <div class="question">4. Say when you have class.</div>
+        <div class="question">5. Ask today&#x27;s date.</div>
+        <div class="question">6. Ask what day it is today.</div>
+        <div class="question">7. Ask when to meet.</div>
+        <div class="question">8. Say when and where to meet.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第11课　办公楼在教学楼北边</h2>
+        <div class="lesson-en">THE TEACHING BUILDING IS TO THE NORTH OF THE ADMINISTRATIVE BUILDING</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.办公楼  B.教学楼  C.图书馆  D.宿舍楼</div>
+        <div class="question">2. A.南边  B.西边  C.北边  D.东边</div>
+        <div class="question">3. A.里边  B.旁边  C.中间  D.附近</div>
+        <div class="question">4. A.药店  B.电影院  C.超市  D.商店</div>
+        <div class="question">5. A.台灯  B.巧克力  C.照片  D.眼镜</div>
+        <div class="question">6. A.右边  B.上边  C.左边  D.下边</div>
+        <div class="question">7. A.抽屉  B.书包  C.闹钟  D.桌子</div>
+        <div class="question">8. A.书店  B.药店  C.公园  D.饭馆</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.jiàoxuélóu  B.jiǎoxuélóu  C.xiǎoxuélóu  D.jiàoxuélou</div>
+        <div class="question">2. A.bèibiān  B.běibiān  C.běibian  D.bèibian</div>
+        <div class="question">3. A.fùjìn  B.fǔjìn  C.fújìn  D.fùjīng</div>
+        <div class="question">4. A.diànyǐngyuán  B.diànyǐngyuàn  C.diǎnyǐngyuàn  D.diànyìngyuàn</div>
+        <div class="question">5. A.zhàopián  B.zhàopiàn  C.zhāopiàn  D.zàopiàn</div>
+        <div class="question">6. A.yòubiān  B.zhuōbiān  C.zuǒbiān  D.zuòbiān</div>
+        <div class="question">7. A.zhuōzi  B.zuōzi  C.zhuòzi  D.chuōzi</div>
+        <div class="question">8. A.fǎnguǎn  B.fànguán  C.fànguǎn  D.fànguāng</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.办公楼在教学楼南边。  B.办公楼在教学楼北边。  C.教学楼在办公楼北边。  D.办公楼在图书馆北边。</div>
+        <div class="question">2. A.图书馆在办公楼东边。  B.图书馆在教学楼西边。  C.办公楼在图书馆西边。  D.图书馆在办公楼西边。</div>
+        <div class="question">3. A.学校附近有很多饭馆。  B.学校里边有很多饭馆和商店。  C.学校附近有很多饭馆和商店。  D.学校附近有一个电影院。</div>
+        <div class="question">4. A.西边还有一个电影院。  B.东边还有一个药店。  C.东边还有一个电影院。  D.东边还有一个超市。</div>
+        <div class="question">5. A.这是保罗的照片。  B.这是保罗和朋友们的照片。  C.这是小雨和朋友们的照片。  D.这是保罗和他朋友的照片。</div>
+        <div class="question">6. A.西蒙在小雨和英男后边。  B.小雨在西蒙和英男中间。  C.西蒙在小雨和英男中间。  D.西蒙在小雨左边。</div>
+        <div class="question">7. A.桌子上边有一本书。  B.桌子下边有一本书和一个台灯。  C.桌子上边有一本书、一个台灯。  D.桌子上边有一张照片。</div>
+        <div class="question">8. A.抽屉里有一本书。  B.桌子上有一块巧克力。  C.抽屉里有一块巧克力。  D.抽屉里有两块巧克力。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.图书馆西边。  B.教学楼北边。  C.宿舍楼北边。  D.我不知道。</div>
+        <div class="question">2. A.学校里边有教学楼。  B.附近有一个电影院。  C.很多饭馆和商店。  D.没有商店。</div>
+        <div class="question">3. A.超市。  B.药店。  C.饭馆。  D.电影院。</div>
+        <div class="question">4. A.小雨和英男中间。  B.左边。  C.西蒙和英男后边。  D.右边。</div>
+        <div class="question">5. A.一块巧克力。  B.什么都没有。  C.一本书、一个台灯。  D.书包。</div>
+        <div class="question">6. A.一本书。  B.一块巧克力。  C.什么都没有。  D.一个台灯。</div>
+        <div class="question">7. A.桌子上边。  B.抽屉里。  C.桌子下边。  D.床下边。</div>
+        <div class="question">8. A.床上。  B.抽屉里。  C.书包里。  D.桌子上。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1. 办公楼在图书馆北边。（√ ×）</div>
+        <div class="question">2. 学校里边有教学楼和办公楼。（√ ×）</div>
+        <div class="question">3. 西蒙在小雨和英男中间。（√ ×）</div>
+        <div class="question">4. 学校东边有一个电影院。（√ ×）</div>
+        <div class="question">5. 电影院对面是一个超市。（√ ×）</div>
+        <div class="question">6. 保罗在朋友们中间。（√ ×）</div>
+        <div class="question">7. 莉莉的桌子上边有台灯。（√ ×）</div>
+        <div class="question">8. 莉莉的书包在抽屉里。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. What is inside the school?
+   A.教学楼和办公楼  B.教学楼、办公楼、图书馆和留学生宿舍楼  C.只有教学楼</div>
+        <div class="question">2. Where is the office building?
+   A.教学楼北边  B.教学楼南边  C.图书馆西边</div>
+        <div class="question">3. Where is the library?
+   A.办公楼西边  B.办公楼东边  C.教学楼北边</div>
+        <div class="question">4. What is near the school?
+   A.很多饭馆和商店  B.一个电影院  C.药店和超市</div>
+        <div class="question">5. What is opposite the cinema?
+   A.超市  B.药店  C.饭馆</div>
+        <div class="question">6. What is beside the drugstore?
+   A.电影院  B.饭馆  C.超市</div>
+        <div class="question">7. Who is on the left?
+   A.英男  B.小雨  C.西蒙</div>
+        <div class="question">8. Where is Simon?
+   A.小雨和英男中间  B.保罗和英男中间  C.小雨左边</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1. 办公楼在教学楼北<span class="blank-line"></span>。</div>
+        <div class="question">2. 图书馆在办公楼<span class="blank-line"></span>边。</div>
+        <div class="question">3. 学校<span class="blank-line"></span>有很多饭馆和商店。</div>
+        <div class="question">4. 东边还有一个电影<span class="blank-line"></span>。</div>
+        <div class="question">5. 西蒙在小雨和英男中<span class="blank-line"></span>。</div>
+        <div class="question">6. 保罗在西蒙和英男<span class="blank-line"></span>边。</div>
+        <div class="question">7. 桌子上边有一<span class="blank-line"></span>照片。</div>
+        <div class="question">8. 抽屉里有一块<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. What is inside the school?
+   A.教学楼和办公楼  B.教学楼、办公楼、图书馆和留学生宿舍楼  C.教学楼和图书馆</div>
+        <div class="question">2. Where is the office building?
+   A.教学楼北边  B.教学楼南边  C.图书馆西边</div>
+        <div class="question">3. Where is the library?
+   A.办公楼东边  B.办公楼西边  C.教学楼北边</div>
+        <div class="question">4. Where is the foreign students&#x27; dormitory?
+   A.图书馆北边  B.教学楼南边  C.图书馆南边</div>
+        <div class="question">5. What is near the school?
+   A.很多饭馆和商店  B.一个电影院  C.药店和超市</div>
+        <div class="question">6. What is in the east?
+   A.饭馆  B.药店  C.电影院</div>
+        <div class="question">7. What is opposite the cinema?
+   A.药店  B.超市  C.饭馆</div>
+        <div class="question">8. What is beside the drugstore?
+   A.电影院  B.超市  C.商店</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表列：建筑 | 在哪儿 | 对面 | 旁边 | 附近</div>
+        <div class="question">行1：药店</div>
+        <div class="question">行2：电影院</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. Who is on the left in the photo?
+   A.英男  B.小雨  C.西蒙</div>
+        <div class="question">2. Who is on the right?
+   A.小雨  B.英男  C.保罗</div>
+        <div class="question">3. Who is between Xiao Yu and Ying Nan?
+   A.保罗  B.英男  C.西蒙</div>
+        <div class="question">4. Where is Paul?
+   A.小雨和英男中间  B.西蒙和英男后边  C.小雨后边</div>
+        <div class="question">5. What is on Lili&#x27;s desk?
+   A.一本书和一个台灯  B.一本书和一张照片  C.一本书、一个台灯和一张照片</div>
+        <div class="question">6. Who is in the photo on the desk?
+   A.莉莉  B.莉莉的男朋友  C.莉莉的朋友</div>
+        <div class="question">7. Where is Lili&#x27;s schoolbag?
+   A.桌子上边  B.桌子下边  C.抽屉里</div>
+        <div class="question">8. What is in the drawer?
+   A.一块巧克力  B.一张照片  C.一本书</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1. 办公楼在教学楼北边。</div>
+        <div class="question">2. 图书馆在办公楼西边。</div>
+        <div class="question">3. 学校附近有很多饭馆和商店。</div>
+        <div class="question">4. 东边还有一个电影院。</div>
+        <div class="question">5. 电影院对面是一个药店。</div>
+        <div class="question">6. 这是保罗和他的朋友们的照片。</div>
+        <div class="question">7. 西蒙在小雨和英男中间。</div>
+        <div class="question">8. 桌子上边有一本书、一个台灯。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1. 办公楼／在／教学楼／北边</div>
+        <div class="question">2. 图书馆／在／办公楼／西边</div>
+        <div class="question">3. 学校／附近／有／很多／饭馆</div>
+        <div class="question">4. 电影院／对面／是／药店</div>
+        <div class="question">5. 这／是／谁／的照片</div>
+        <div class="question">6. 西蒙／在／小雨／和／英男／中间</div>
+        <div class="question">7. 莉莉／的书包／在／桌子／下边</div>
+        <div class="question">8. 抽屉／里／有／巧克力</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1. 办公楼的位置（教学楼北边）</div>
+        <div class="question">2. 图书馆的位置（办公楼西边）</div>
+        <div class="question">3. 学校附近（很多饭馆和商店）</div>
+        <div class="question">4. 电影院对面（药店）</div>
+        <div class="question">5. 照片左边的人（小雨）</div>
+        <div class="question">6. 照片中间的人（西蒙）</div>
+        <div class="question">7. 莉莉的桌子上边（一本书、一个台灯、一张照片）</div>
+        <div class="question">8. 莉莉的书包（桌子下边）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Say where the office building is.</div>
+        <div class="question">2. Say what is near your school.</div>
+        <div class="question">3. Ask what is opposite the cinema.</div>
+        <div class="question">4. Say who is on the left in the photo.</div>
+        <div class="question">5. Say who is in the middle.</div>
+        <div class="question">6. Ask where Paul is.</div>
+        <div class="question">7. Say what is on the table.</div>
+        <div class="question">8. Ask what is in the drawer.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第12课　要红的还是要蓝的</h2>
+        <div class="lesson-en">WHAT DO YOU WANT, THE RED ONE OR THE BLUE ONE</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.铅笔  B.圆珠笔  C.苹果  D.橘子</div>
+        <div class="question">2. A.橘子  B.苹果  C.西红柿  D.东西</div>
+        <div class="question">3. A.酸的  B.甜的  C.红的  D.蓝的</div>
+        <div class="question">4. A.铅笔  B.零钱  C.圆珠笔  D.苹果</div>
+        <div class="question">5. A.甜  B.酸  C.新鲜  D.红</div>
+        <div class="question">6. A.还是  B.别的  C.怎么  D.一共</div>
+        <div class="question">7. A.买  B.卖  C.尝  D.摘</div>
+        <div class="question">8. A.铅笔  B.苹果  C.自行车  D.橘子</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.yuánzhūbǐ  B.yuánzūbǐ  C.yánzhūbǐ  D.yuánzhūpǐ</div>
+        <div class="question">2. A.xīhóngsì  B.xīhóngshì  C.xīhǒngshì  D.qīhóngshì</div>
+        <div class="question">3. A.tán  B.tiān  C.tián  D.tiǎn</div>
+        <div class="question">4. A.língqián  B.línqián  C.língjián  D.língqán</div>
+        <div class="question">5. A.xīnxián  B.xīngxiān  C.xīnxiān  D.xīnxiāng</div>
+        <div class="question">6. A.yígòng  B.yígōng  C.yìgòng  D.yígóng</div>
+        <div class="question">7. A.mǎi  B.mài  C.mái  D.māi</div>
+        <div class="question">8. A.zìxíngchē  B.zíxíngchē  C.zīxīngchē  D.zhìxíngchē</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.要红的还是要蓝的？  B.要红的还是蓝的？  C.要红的还是要绿的？  D.要黄的还是要蓝的？</div>
+        <div class="question">2. A.一样两支。  B.一样一个。  C.一样一支。  D.一支。</div>
+        <div class="question">3. A.要别的吗？  B.还要别的。  C.不要别的吗？  D.还要别的吗？</div>
+        <div class="question">4. A.不要。  B.还要。  C.别要了。  D.不要了。</div>
+        <div class="question">5. A.请问，哪儿卖可乐？  B.请问，哪儿卖橘子？  C.请问，哪儿卖啤酒（píjiǔ）？  D.请问，哪儿卖铅笔？</div>
+        <div class="question">6. A.多少钱一斤？  B.一共几块？  C.多少钱？  D.一共多少钱？</div>
+        <div class="question">7. A.给钱。  B.给您零钱。  C.给您钱。  D.不要钱。</div>
+        <div class="question">8. A.你有零钱吗？  B.您没有零钱吗？  C.有零钱吗？  D.您有零钱吗？</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.要红的。  B.还要别的。  C.一样一支。  D.不要了。</div>
+        <div class="question">2. A.还要。  B.要。  C.不要别的。  D.不要了。</div>
+        <div class="question">3. A.三块。  B.十九块四。  C.两块。  D.五十块。</div>
+        <div class="question">4. A.有。  B.有零钱。  C.很多。  D.没有。</div>
+        <div class="question">5. A.小的三块钱一斤。  B.大的三块钱一斤。  C.大的十块钱四斤。  D.三块钱一斤。</div>
+        <div class="question">6. A.不甜。  B.酸的。  C.很甜。  D.是甜的。</div>
+        <div class="question">7. A.不新鲜。  B.很甜。  C.不要钱。  D.新鲜极了。</div>
+        <div class="question">8. A.这儿卖。  B.不卖。  C.那儿卖。  D.卖。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1.保罗买两支圆珠笔。（√ ×）</div>
+        <div class="question">2.保罗要蓝的圆珠笔。（√ ×）</div>
+        <div class="question">3.保罗还要别的。（√ ×）</div>
+        <div class="question">4.青岛（Qīngdǎo）啤酒（píjiǔ）那儿有卖。（√ ×）</div>
+        <div class="question">5.保罗一共给十九块四。（√ ×）</div>
+        <div class="question">6.保罗有零钱。（√ ×）</div>
+        <div class="question">7.小的橘子三块钱一斤。（√ ×）</div>
+        <div class="question">8.直美问橘子甜不甜。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. What does Paul buy?  A.两支铅笔  B.一支圆珠笔  C.两支圆珠笔</div>
+        <div class="question">2. What color does Paul want?  A.红的  B.蓝的  C.红的和蓝的各一支</div>
+        <div class="question">3. Does Paul want anything else?  A.要  B.不要了  C.还要一支</div>
+        <div class="question">4. How many bottles of beer does Paul buy?  A.两瓶  B.三瓶  C.四瓶</div>
+        <div class="question">5. What else does Paul buy?  A.两听可口可乐（Kěkǒukělè）  B.一听可口可乐  C.两支圆珠笔</div>
+        <div class="question">6. How much is it altogether?  A.十四块九  B.十九块四  C.五十块</div>
+        <div class="question">7. How much is a jin of big oranges?  A.十块  B.三块  C.四块</div>
+        <div class="question">8. How much is a jin of tomatoes?  A.三块  B.三块八  C.四块五</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1.要红的<span class="blank-line"></span>要蓝的？</div>
+        <div class="question">2.一样一<span class="blank-line"></span>。</div>
+        <div class="question">3.一共多少<span class="blank-line"></span>？</div>
+        <div class="question">4.找您三十块零六<span class="blank-line"></span>。</div>
+        <div class="question">5.橘子多少钱一<span class="blank-line"></span>？</div>
+        <div class="question">6.甜<span class="blank-line"></span>甜？</div>
+        <div class="question">7.西红柿怎么<span class="blank-line"></span>？</div>
+        <div class="question">8.新鲜<span class="blank-line"></span>了。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. What does Paul buy?  A.两支圆珠笔  B.两支铅笔  C.一支圆珠笔</div>
+        <div class="question">2. What colors of pens does Paul want?  A.红的  B.蓝的  C.红的和蓝的各一支</div>
+        <div class="question">3. How many bottles of beer does Paul buy?  A.两瓶  B.四瓶  C.一听</div>
+        <div class="question">4. What else does Paul buy?  A.两听可口可乐（Kěkǒukělè）  B.一听可口可乐  C.四听可口可乐</div>
+        <div class="question">5. How much is it altogether?  A.十九块四  B.十四块九  C.五十块</div>
+        <div class="question">6. How much money does Paul give the shop assistant?  A.十九块四  B.三十块  C.五十块</div>
+        <div class="question">7. How much change does the shop assistant give Paul?  A.十九块四  B.三十块零六毛  C.三十块</div>
+        <div class="question">8. Does Paul have small change?  A.有  B.没有  C.不知道</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表头：东西 | 怎么卖 | 买多少 | 甜吗 | 新鲜吗</div>
+        <div class="question">行1：橘子</div>
+        <div class="question">行2：西红柿</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. Where does Zhimei buy fruit?  A.商店  B.市场（shìchǎng）  C.学校</div>
+        <div class="question">2. How much is a jin of big oranges?  A.三块  B.十块  C.四块</div>
+        <div class="question">3. How much are the small oranges?  A.三块一斤  B.十块四斤  C.四块一斤</div>
+        <div class="question">4. How many jin of oranges does Zhimei buy?  A.一斤  B.两斤  C.三斤</div>
+        <div class="question">5. Are the oranges sweet?  A.很甜  B.不甜  C.酸的</div>
+        <div class="question">6. How much is a jin of tomatoes?  A.一斤三块八  B.一斤三块  C.一斤四块八</div>
+        <div class="question">7. How many jin of tomatoes does Zhimei buy?  A.一斤  B.两斤  C.三斤</div>
+        <div class="question">8. Are the tomatoes fresh?  A.不新鲜  B.新鲜极了  C.不知道</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1.要红的还是要蓝的？</div>
+        <div class="question">2.一样一支。</div>
+        <div class="question">3.还要别的吗？</div>
+        <div class="question">4.不要了。</div>
+        <div class="question">5.一共多少钱？</div>
+        <div class="question">6.十九块四。</div>
+        <div class="question">7.您有零钱吗？</div>
+        <div class="question">8.橘子多少钱一斤？</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1.要/红的/还是/蓝的</div>
+        <div class="question">2.一样/一支</div>
+        <div class="question">3.还要/别的/吗</div>
+        <div class="question">4.一共/多少/钱</div>
+        <div class="question">5.哪儿/卖/啤酒（píjiǔ）</div>
+        <div class="question">6.给/您/钱</div>
+        <div class="question">7.橘子/多少/钱/一斤</div>
+        <div class="question">8.新鲜/不/新鲜</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1.你要的圆珠笔（红的和蓝的各一支）</div>
+        <div class="question">2.一共的钱（十九块四）</div>
+        <div class="question">3.售货员找的钱（三十块零六毛）</div>
+        <div class="question">4.大的橘子（三块钱一斤）</div>
+        <div class="question">5.小的橘子（十块钱四斤）</div>
+        <div class="question">6.西红柿（一斤三块八）</div>
+        <div class="question">7.橘子（很甜）</div>
+        <div class="question">8.西红柿（新鲜极了）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Ask for two red pens.</div>
+        <div class="question">2. Ask whether to take the red one or the blue one.</div>
+        <div class="question">3. Ask the total price.</div>
+        <div class="question">4. Ask if someone has small change.</div>
+        <div class="question">5. Ask where beer is sold.</div>
+        <div class="question">6. Ask the price of oranges per jin.</div>
+        <div class="question">7. Ask if the tomatoes are fresh.</div>
+        <div class="question">8. Say you don&#x27;t want anything else.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第13课　您给我介绍介绍</h2>
+        <div class="lesson-en">PLEASE GIVE ME A BRIEF INTRODUCTION</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.手机  B.电脑  C.电话  D.电视</div>
+        <div class="question">2. A.牌子  B.质量  C.价钱  D.样子</div>
+        <div class="question">3. A.合适  B.好看  C.便宜  D.好看</div>
+        <div class="question">4. A.裤子  B.衬衣  C.衣服  D.裙子</div>
+        <div class="question">5. A.试试  B.看看  C.尝尝  D.算算</div>
+        <div class="question">6. A.样子  B.颜色  C.牌子  D.价钱</div>
+        <div class="question">7. A.合适  B.好看  C.便宜  D.大</div>
+        <div class="question">8. A.有点儿  B.不多  C.一点儿  D.很多</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.shǒujī  B.shǒují  C.sǒujī  D.shòujī</div>
+        <div class="question">2. A.zhìliáng  B.zhìliàng  C.zhíliàng  D.zìliàng</div>
+        <div class="question">3. A.piányí  B.piányì  C.piányi  D.piǎnyí</div>
+        <div class="question">4. A.chènyī  B.chènī  C.chènyǐ  D.chěnyī</div>
+        <div class="question">5. A.shīshi  B.shìshi  C.shìshì  D.shìxī</div>
+        <div class="question">6. A.yánsè  B.yǎnsè  C.yánsē  D.yànsè</div>
+        <div class="question">7. A.hēshi  B.héshǐ  C.hèshi  D.héshì</div>
+        <div class="question">8. A.yìdiǎnr  B.yīdiǎnr  C.yǐdiǎnr  D.yídiǎnr</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.我想买个电脑。  B.我想看看手机。  C.我想买个手机。  D.我买了个手机。</div>
+        <div class="question">2. A.您想买什么颜色的？  B.您想买多少钱的？  C.您想买什么样的？  D.您想买几个的？</div>
+        <div class="question">3. A.两千块的。  B.三千块左右的。  C.两千块左右。  D.两千块左右的。</div>
+        <div class="question">4. A.质量不好，价钱便宜。  B.质量又好，价钱又便宜。  C.质量又好，价钱不便宜。  D.质量又便宜，价钱又好。</div>
+        <div class="question">5. A.这双鞋是多大码的？  B.这双鞋是什么颜色的？  C.这双鞋（xié）是多大号的？  D.这双鞋多少钱？</div>
+        <div class="question">6. A.我可以看看吗？  B.我可以买吗？  C.我试试可以吗？  D.我可以试试吗？</div>
+        <div class="question">7. A.这双有点儿大，有小一点儿的吗？  B.这双不小，有大一点儿的吗？  C.这双有点儿小，有大一点儿的吗？  D.这双有点儿小，有小的吗？</div>
+        <div class="question">8. A.太贵了，不要了。  B.便宜了，贵点儿吧。  C.太贵了，好看点儿吧。  D.太贵（tài guì）了，便宜点儿吧。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.三千块左右的。  B.两千块左右的。  C.两千块的。  D.不知道。</div>
+        <div class="question">2. A.15号的。  B.35号的。  C.25块。  D.25号的。</div>
+        <div class="question">3. A.不可以。  B.不知道。  C.可以。  D.谢谢。</div>
+        <div class="question">4. A.没有。  B.有大号的。  C.可以。  D.有，您再试试25号半的。</div>
+        <div class="question">5. A.我要买手机。  B.我看看样子。  C.我不要。  D.我看看那件白的真丝衬衣。</div>
+        <div class="question">6. A.一百六。  B.一百五。  C.一百八。  D.八十。</div>
+        <div class="question">7. A.不要了。  B.太贵了。  C.一百八吧。  D.您给一百六吧。</div>
+        <div class="question">8. A.质量不好。  B.很好看。  C.质量又好，价钱又便宜。  D.两千块。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1.英男想买一个手机。（√ ×）</div>
+        <div class="question">2.英男想买三千块左右的手机。（√ ×）</div>
+        <div class="question">3.手机质量又好，价钱又便宜。（√ ×）</div>
+        <div class="question">4.25号的鞋英男穿有点儿小。（√ ×）</div>
+        <div class="question">5.英男试了25号半的鞋，挺合适。（√ ×）</div>
+        <div class="question">6.真丝衬衣有两种颜色。（√ ×）</div>
+        <div class="question">7.衬衣一百八一件。（√ ×）</div>
+        <div class="question">8.莉莉觉得衬衣很便宜。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. What does Ying Nan want to buy?  A.电脑  B.鞋  C.手机</div>
+        <div class="question">2. How much does Ying Nan want to pay?  A.两千块左右  B.三千块左右  C.一千块左右</div>
+        <div class="question">3. How is the phone of this brand?  A.质量不好，价钱便宜  B.质量又好，价钱又便宜  C.质量好，价钱贵</div>
+        <div class="question">4. What size are the shoes?  A.25号半  B.25号  C.24号</div>
+        <div class="question">5. How are the size-25 shoes?  A.挺合适  B.有点儿小  C.有点儿大</div>
+        <div class="question">6. What size does Ying Nan take at last?  A.25号  B.25号半  C.26号</div>
+        <div class="question">7. What color is the shirt?  A.红的  B.白的  C.蓝的</div>
+        <div class="question">8. How much is the shirt at last?  A.一百五  B.一百八  C.一百六</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1.我想<span class="blank-line"></span>个手机。</div>
+        <div class="question">2.两千块<span class="blank-line"></span>的。</div>
+        <div class="question">3.质量又<span class="blank-line"></span>，价钱又便宜。</div>
+        <div class="question">4.这双鞋是多大<span class="blank-line"></span>的？</div>
+        <div class="question">5.这双<span class="blank-line"></span>小，有大一点儿的吗？</div>
+        <div class="question">6.有，您再试试25号<span class="blank-line"></span>的。</div>
+        <div class="question">7.太贵了，<span class="blank-line"></span>点儿吧。</div>
+        <div class="question">8.只有这一<span class="blank-line"></span>颜色。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. What does Ying Nan want to buy?  A.手机  B.电脑  C.衬衣</div>
+        <div class="question">2. How much does Ying Nan want to pay?  A.两千块左右  B.三千块左右  C.一千块左右</div>
+        <div class="question">3. Who introduces the phone?  A.朋友  B.售货员  C.老师</div>
+        <div class="question">4. How is the quality of this brand?  A.不好  B.很好  C.不知道</div>
+        <div class="question">5. How is the price?  A.很贵  B.便宜  C.不便宜</div>
+        <div class="question">6. How does the style look?  A.不好看  B.挺好看  C.不知道</div>
+        <div class="question">7. Does Ying Nan buy the phone at last?  A.买了  B.没有  C.不知道</div>
+        <div class="question">8. Does Ying Nan want to see other phones?  A.要  B.不要  C.不知道</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表头：东西 | 多少钱 | 牌子 | 颜色 | 怎么样</div>
+        <div class="question">行1：手机</div>
+        <div class="question">行2：衬衣</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. Where does Ying Nan go?  A.商店  B.市场  C.学校</div>
+        <div class="question">2. What does Ying Nan buy?  A.手机  B.衬衣  C.鞋</div>
+        <div class="question">3. How are the size-25 shoes?  A.有点儿大  B.有点儿小  C.挺合适</div>
+        <div class="question">4. How many pairs of shoes does Ying Nan try?  A.一双  B.两双  C.三双</div>
+        <div class="question">5. How are the size-25-and-a-half shoes?  A.有点儿大  B.有点儿小  C.不大也不小</div>
+        <div class="question">6. Does Ying Nan like the size-25-and-a-half shoes?  A.挺合适  B.不合适  C.太大了</div>
+        <div class="question">7. Who helps Ying Nan with the shoes?  A.朋友  B.售货员  C.老师</div>
+        <div class="question">8. Does Ying Nan buy the shoes?  A.买了  B.没有  C.不知道</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1.我想买个手机。</div>
+        <div class="question">2.您想买多少钱的？</div>
+        <div class="question">3.两千块左右的。</div>
+        <div class="question">4.质量又好，价钱又便宜。</div>
+        <div class="question">5.这双鞋是多大号的？</div>
+        <div class="question">6.我可以试试吗？</div>
+        <div class="question">7.这双有点儿小，有大一点儿的吗？</div>
+        <div class="question">8.太贵了，便宜点儿吧。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1.我/想/买/个/手机</div>
+        <div class="question">2.您/给我/介绍/介绍</div>
+        <div class="question">3.两千/块/左右/的</div>
+        <div class="question">4.质量/又/好，价钱/又/便宜</div>
+        <div class="question">5.这双/鞋/是/多大号/的</div>
+        <div class="question">6.我/可以/试试/吗</div>
+        <div class="question">7.有/大/一点儿/的/吗</div>
+        <div class="question">8.便宜/点儿/吧</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1.你想买的手机（两千块左右）</div>
+        <div class="question">2.这个牌子的手机（质量好、价钱便宜）</div>
+        <div class="question">3.鞋的号码（25号）</div>
+        <div class="question">4.25号的鞋（有点儿小）</div>
+        <div class="question">5.25号半的鞋（不大不小，挺合适）</div>
+        <div class="question">6.那件衬衣（白的真丝）</div>
+        <div class="question">7.衬衣的颜色（只有一种）</div>
+        <div class="question">8.衬衣的价钱（一百八，太贵了）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Say you want to buy a mobile phone.</div>
+        <div class="question">2. Ask the price you want.</div>
+        <div class="question">3. Say the quality is good and the price is cheap.</div>
+        <div class="question">4. Ask the shoe size.</div>
+        <div class="question">5. Ask if you can try something on.</div>
+        <div class="question">6. Say the shoes are a bit small.</div>
+        <div class="question">7. Say the shirt is too expensive.</div>
+        <div class="question">8. Ask for a cheaper price.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第14课　咱们去尝尝，好吗</h2>
+        <div class="lesson-en">LETS HAVE A TASTE, SHALL WE</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.餐巾纸  B.菜单  C.饮料  D.服务员</div>
+        <div class="question">2. A.好看  B.好玩  C.好吃  D.好喝</div>
+        <div class="question">3. A.鱼香肉丝  B.麻婆豆腐  C.酸辣汤  D.米饭</div>
+        <div class="question">4. A.请客  B.点菜  C.结账  D.付钱</div>
+        <div class="question">5. A.老师  B.服务员  C.小姐  D.经理</div>
+        <div class="question">6. A.米饭  B.茶  C.汤  D.饮料</div>
+        <div class="question">7. A.听说  B.觉得  C.喜欢  D.知道</div>
+        <div class="question">8. A.点菜  B.结账  C.请客  D.付钱</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.càidān  B.cǎidān  C.càidàn  D.cādān</div>
+        <div class="question">2. A.hǎochí  B.hǎochī  C.hǎochǐ  D.haochī</div>
+        <div class="question">3. A.yǔxiāng ròusī  B.yúxiāng ròusī  C.yúxiāng ròusī  D.yúxiān ròusī</div>
+        <div class="question">4. A.jié zhāng  B.jiē zhàng  C.jiè zhàng  D.jié zhàng</div>
+        <div class="question">5. A.fúwùyuán  B.fúwùyuán  C.fúwùyuán  D.fúwùyuán</div>
+        <div class="question">6. A.yínliào  B.yǐnliào  C.yìnliào  D.yǐngliào</div>
+        <div class="question">7. A.jué de  B.juěde  C.juéde  D.juède</div>
+        <div class="question">8. A.qíng kè  B.qǐng kè  C.qing kè  D.qǐng gè</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.咱们去看看吧，好吗？  B.咱们去尝尝。  C.咱们去尝尝，好吗？  D.咱们去看看，好吗？</div>
+        <div class="question">2. A.明天中午我有事。  B.今天晚上我没有事。  C.今天晚上我有课。  D.今天晚上我有事。</div>
+        <div class="question">3. A.今天中午好吗？  B.明天晚上好吗？  C.明天中午怎么样？  D.明天中午好吗？</div>
+        <div class="question">4. A.这是菜单，请看看。  B.这是菜单，请点菜。  C.这是菜，请点菜。  D.这是菜单，请结账。</div>
+        <div class="question">5. A.来两个鱼香肉丝，一个麻婆豆腐。  B.来一个鱼香肉丝，两个麻婆豆腐。  C.来一个鱼香肉丝和一个酸辣汤。  D.来一个鱼香肉丝，一个麻婆豆腐。</div>
+        <div class="question">6. A.要什么菜？  B.要什么米饭（mǐfàn）？  C.要什么茶（chá）？  D.要什么饮料？</div>
+        <div class="question">7. A.请点菜。  B.请结账。  C.请稍等。  D.请来茶。</div>
+        <div class="question">8. A.你觉得中国菜好看吗？  B.你觉得韩国菜好吃吗？  C.你觉得中国菜贵吗？  D.你觉得中国菜（zhōngguó cài）好吃吗？</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.不好。  B.好啊！  C.不知道。  D.谢谢。</div>
+        <div class="question">2. A.明天中午好吗？  B.今天晚上怎么样？  C.现在去。  D.不知道。</div>
+        <div class="question">3. A.不好。  B.行吗？  C.好！  D.可以吗？</div>
+        <div class="question">4. A.来一杯茶（chá）。  B.来两壶茶（chá）。  C.不要茶（chá）。  D.来一壶茶（chá）。</div>
+        <div class="question">5. A.不好吃。  B.很好吃。  C.好吃是好吃，不过油太多。  D.不知道。</div>
+        <div class="question">6. A.我喜欢中国菜。  B.我什么都喜欢吃。  C.我不喜欢吃菜。  D.我最喜欢吃韩国菜（Hánguó cài）。</div>
+        <div class="question">7. A.我不吃辣的。  B.我吃。  C.辣的不好吃。  D.我喜欢吃辣的。</div>
+        <div class="question">8. A.一共二十八块。  B.好，请稍等。  C.好，一共三十八块。  D.不要钱。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1.直美听说四川菜（Sìchuān cài）很好吃。（√ ×）</div>
+        <div class="question">2.他们今天中午去饭馆（fànguǎn）。（√ ×）</div>
+        <div class="question">3.直美点了一个鱼香肉丝、一个麻婆豆腐。（√ ×）</div>
+        <div class="question">4.他们要了酸辣汤和米饭（mǐfàn）。（√ ×）</div>
+        <div class="question">5.莉莉觉得中国菜（zhōngguó cài）油太多。（√ ×）</div>
+        <div class="question">6.莉莉喜欢吃甜的。（√ ×）</div>
+        <div class="question">7.直美不喜欢吃甜的。（√ ×）</div>
+        <div class="question">8.今天莉莉请客。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. What dishes does Zhimei hear are delicious?  A.四川菜（Sìchuān cài）  B.韩国菜（Hánguó cài）  C.中国菜（zhōngguó cài）</div>
+        <div class="question">2. When do they go to the restaurant?  A.今天晚上  B.明天中午  C.明天晚上</div>
+        <div class="question">3. What does Zhimei order?  A.一个鱼香肉丝、一个麻婆豆腐  B.一个酸辣汤  C.两碗米饭</div>
+        <div class="question">4. What drink does Zhimei want?  A.可乐  B.茶（chá）  C.啤酒</div>
+        <div class="question">5. How many bowls of rice do they want?  A.一碗  B.两碗  C.三碗</div>
+        <div class="question">6. What does Lili think of Chinese food?  A.好吃是好吃，不过油太多  B.不好吃  C.很好吃</div>
+        <div class="question">7. What food does Lili like best?  A.中国菜（zhōngguó cài）  B.四川菜（Sìchuān cài）  C.韩国菜（Hánguó cài）</div>
+        <div class="question">8. What taste doesn&#x27;t Zhimei like?  A.辣的  B.甜的  C.酸的</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1.听说四川菜很好<span class="blank-line"></span>。</div>
+        <div class="question">2.咱们去尝<span class="blank-line"></span>，好吗？</div>
+        <div class="question">3.明天中<span class="blank-line"></span>好吗？</div>
+        <div class="question">4.这是菜单，请<span class="blank-line"></span>菜。</div>
+        <div class="question">5.再来两碗米<span class="blank-line"></span>。</div>
+        <div class="question">6.要什么<span class="blank-line"></span>？</div>
+        <div class="question">7.来一<span class="blank-line"></span>茶。</div>
+        <div class="question">8.请<span class="blank-line"></span>等。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. When do Zhimei and Lili go to the restaurant?  A.今天晚上  B.明天中午  C.明天晚上</div>
+        <div class="question">2. Who hears that Sichuan food is delicious?  A.莉莉  B.直美  C.服务员</div>
+        <div class="question">3. Where do they eat?  A.饭馆（fànguǎn）  B.食堂（shítáng）  C.家</div>
+        <div class="question">4. What dishes does Zhimei order?  A.鱼香肉丝和麻婆豆腐  B.酸辣汤  C.韩国菜（Hánguó cài）</div>
+        <div class="question">5. What drink do they want?  A.可乐  B.茶（chá）  C.啤酒</div>
+        <div class="question">6. What does Lili think of Chinese food?  A.好吃，油太多  B.不好吃  C.油太少</div>
+        <div class="question">7. What food does Lili like best?  A.四川菜（Sìchuān cài）  B.中国菜（zhōngguó cài）  C.韩国菜（Hánguó cài）</div>
+        <div class="question">8. Who treats today?  A.莉莉  B.直美  C.服务员</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表头：菜 | 价格 | 数量 | 米饭（mǐfàn） | 饮料</div>
+        <div class="question">行1：鱼香肉丝</div>
+        <div class="question">行2：麻婆豆腐</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. What does Lili think of Chinese food?  A.好吃是好吃，不过油太多  B.不好吃  C.很好吃</div>
+        <div class="question">2. What food does Lili like best?  A.中国菜（zhōngguó cài）  B.韩国菜（Hánguó cài）  C.四川菜（Sìchuān cài）</div>
+        <div class="question">3. What taste does Lili like?  A.甜的  B.酸的  C.辣的</div>
+        <div class="question">4. What doesn&#x27;t Zhimei like?  A.甜的  B.辣的  C.咸的</div>
+        <div class="question">5. Who asks for the bill?  A.莉莉  B.直美  C.服务员</div>
+        <div class="question">6. What else does Lili want?  A.两张餐巾纸  B.一壶茶（chá）  C.两碗米饭（mǐfàn）</div>
+        <div class="question">7. Who treats today?  A.莉莉  B.直美  C.服务员</div>
+        <div class="question">8. What will Lili treat Zhimei with later?  A.四川菜（Sìchuān cài）  B.韩国菜（Hánguó cài）  C.中国菜（zhōngguó cài）</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1.听说四川菜很好吃。</div>
+        <div class="question">2.咱们去尝尝，好吗？</div>
+        <div class="question">3.好啊，什么时候去？</div>
+        <div class="question">4.明天中午好吗？</div>
+        <div class="question">5.这是菜单，请点菜。</div>
+        <div class="question">6.来一个鱼香肉丝，一个麻婆豆腐。</div>
+        <div class="question">7.要什么饮料？</div>
+        <div class="question">8.小姐，结账。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1.咱们/去/尝尝/好吗</div>
+        <div class="question">2.四川菜/很/好吃</div>
+        <div class="question">3.今天/晚上/我/有/事</div>
+        <div class="question">4.明天/中午/好吗</div>
+        <div class="question">5.这/是/菜单</div>
+        <div class="question">6.请/点菜</div>
+        <div class="question">7.来/一壶/茶（chá）</div>
+        <div class="question">8.我/请客/今天</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1.你听说的菜（四川菜很好吃）</div>
+        <div class="question">2.你尝尝的建议（咱们去尝尝，好吗）</div>
+        <div class="question">3.直美点的菜（鱼香肉丝、麻婆豆腐）</div>
+        <div class="question">4.他们要的饮料（一壶茶chá）</div>
+        <div class="question">5.他们要的汤（酸辣汤）</div>
+        <div class="question">6.莉莉觉得中国菜（好吃是好吃，油太多）</div>
+        <div class="question">7.莉莉喜欢吃的（辣的韩国菜Hánguó cài）</div>
+        <div class="question">8.直美不喜欢吃的（甜的）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Suggest going to a Sichuan restaurant.</div>
+        <div class="question">2. Say you have something to do tonight.</div>
+        <div class="question">3. Order a dish.</div>
+        <div class="question">4. Ask what drink to have.</div>
+        <div class="question">5. Say you don&#x27;t like sweet food.</div>
+        <div class="question">6. Ask the waiter for napkins.</div>
+        <div class="question">7. Say you will pay and treat.</div>
+        <div class="question">8. Ask for the bill.</div>
+      </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <div class="lesson-header">
+        <div class="book-name">《汉语口语速成 · 入门篇（上）》</div>
+        <h2>第15课　去邮局怎么走</h2>
+        <div class="lesson-en">HOW CAN I GET TO THE POST OFFICE</div>
+        <div class="line" style="background: #1565C0;"></div>
+      </div>
+
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 1 · Listen and choose the word you hear</div>
+        <div class="part-desc">听录音，选出你听到的词语</div>
+        <div class="question">1. A.来  B.去  C.走  D.到</div>
+        <div class="question">2. A.一起  B.一会儿  C.一直  D.一下</div>
+        <div class="question">3. A.门口  B.马路  C.路口  D.地铁</div>
+        <div class="question">4. A.换  B.过  C.送  D.拐</div>
+        <div class="question">5. A.米  B.斤  C.公里  D.岁</div>
+        <div class="question">6. A.汽车  B.火车  C.飞机  D.地铁</div>
+        <div class="question">7. A.路口  B.马路  C.楼  D.路</div>
+        <div class="question">8. A.宽  B.重  C.快  D.贵</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 2 · Listen and choose the pinyin you hear</div>
+        <div class="part-desc">听录音，选出正确的拼音</div>
+        <div class="question">1. A.zǒu  B.zōu  C.zòu  D.zuǒ</div>
+        <div class="question">2. A.yìzhǐ  B.yìzhí  C.yìzhì  D.yìzhī</div>
+        <div class="question">3. A.lùkǒu  B.lùkòu  C.nùkǒu  D.lúkǒu</div>
+        <div class="question">4. A.guāi  B.guǎi  C.gǎi  D.guài</div>
+        <div class="question">5. A.gōnglǐ  B.gōnglí  C.gònglǐ  D.gōnglì</div>
+        <div class="question">6. A.dìtiē  B.dìtiě  C.dìtié  D.dǐtiě</div>
+        <div class="question">7. A.mǎlù  B.málù  C.mǎlǜ  D.mālù</div>
+        <div class="question">8. A.kuài  B.kuāi  C.kuǎi  D.guài</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 3 · Listen and choose the sentence you hear</div>
+        <div class="part-desc">听录音，选出你听到的句子</div>
+        <div class="question">1. A.邮局在哪儿？  B.去邮局（yóujú）怎么走？  C.去邮局怎么去？  D.去邮局远吗？</div>
+        <div class="question">2. A.一直往右走。  B.一直往前走。  C.往前走一走。  D.一直往前走一走。</div>
+        <div class="question">3. A.到路口往右拐。  B.到十字路口往左拐。  C.到十字路口往右拐。  D.到十字路口不拐。</div>
+        <div class="question">4. A.离这儿近吗？  B.离（lí）这儿多远（yuǎn）？  C.这儿多远？  D.离那儿多远？</div>
+        <div class="question">5. A.二百多米。  B.二百多斤。  C.两百多米。  D.二百多块。</div>
+        <div class="question">6. A.百货大楼有多远？  B.从这儿到百货大楼远吗？  C.从这儿到百货大楼有多远？  D.从这儿到百货大楼怎么走？</div>
+        <div class="question">7. A.过马路，先坐2路公共汽车，然后换出租车。  B.过马路，先坐地铁，然后换公共汽车。  C.过马路，坐2路公共汽车。  D.过马路，先坐2路公共汽车，然后换（huàn）地铁。</div>
+        <div class="question">8. A.这条路近，不过有点儿乱。  B.那条路近，不过有点儿乱。  C.这条路近，不过有点儿远。  D.这条路近，但是很乱。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 4 · Listen and choose the correct response</div>
+        <div class="part-desc">听录音，选出合适的应答</div>
+        <div class="question">1. A.往左拐。  B.坐（zuò）地铁去。  C.一直往前走，到十字路口往右拐。  D.不知道。</div>
+        <div class="question">2. A.十三四公里。  B.很远。  C.二百多米。  D.很近。</div>
+        <div class="question">3. A.二百多米。  B.十三四公里。  C.两公里。  D.不知道。</div>
+        <div class="question">4. A.坐（zuò）飞机。  B.过马路，先坐（zuò）2路公共汽车，然后换（huàn）地铁。  C.走路去。  D.坐（zuò）火车。</div>
+        <div class="question">5. A.只能走这条路。  B.两条路都不行。  C.不知道。  D.走这条路或者那条路都行。</div>
+        <div class="question">6. A.那条路近，不过有点儿乱。  B.两条路都近。  C.这条路近，不过有点儿乱。  D.都不近。</div>
+        <div class="question">7. A.坐（zuò）飞机吧。  B.坐（zuò）火车吧，飞机快。  C.坐（zuò）飞机太贵了，还是坐（zuò）火车吧。  D.坐（zuò）公共汽车吧。</div>
+        <div class="question">8. A.不好。  B.好啊。  C.明天去。  D.你去吧。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 5 · Listen to the dialogues and tick √ or ×</div>
+        <div class="part-desc">听对话，判断正误</div>
+        <div class="question">1.莉莉要去邮局（yóujú）。（√ ×）</div>
+        <div class="question">2.到十字路口往左拐。（√ ×）</div>
+        <div class="question">3.邮局（yóujú）离这儿二百多米。（√ ×）</div>
+        <div class="question">4.从这儿到百货大楼有十三四公里。（√ ×）</div>
+        <div class="question">5.先坐（zuò）2路公共汽车，然后换（huàn）地铁。（√ ×）</div>
+        <div class="question">6.去天安门（Tiān&#x27;ānmén），哪条路都行。（√ ×）</div>
+        <div class="question">7.这条路近，不过有点儿乱。（√ ×）</div>
+        <div class="question">8.英男想坐（zuò）飞机，因为又快又舒服。（√ ×）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 6 · Listen to the dialogues and choose the correct answer</div>
+        <div class="part-desc">听对话，选择正确答案</div>
+        <div class="question">1. Where does Lili want to go?  A.邮局（yóujú）  B.商店（shāngdiàn）  C.银行（yínháng）</div>
+        <div class="question">2. How does she get there?  A.一直往前走，到十字路口往右拐  B.过马路往左拐  C.往前走，往左拐</div>
+        <div class="question">3. How far is it from here to the department store?  A.十三四公里  B.二百多米  C.四五公里</div>
+        <div class="question">4. How do they get there by bus?  A.坐（zuò）出租车  B.先坐（zuò）2路公共汽车，然后换（huàn）地铁  C.坐（zuò）火车</div>
+        <div class="question">5. Where does Baoluo want to go?  A.天安门（Tiān&#x27;ānmén）  B.百货大楼  C.大同</div>
+        <div class="question">6. Why does Baoluo take that road?  A.那条路近  B.他骑车技术不太高  C.那条路乱</div>
+        <div class="question">7. Where do they go on the weekend?  A.大同  B.天安门（Tiān&#x27;ānmén）  C.邮局（yóujú）</div>
+        <div class="question">8. How do they go there at last?  A.飞机  B.火车  C.公共汽车</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 7 · Listen and fill in the blanks</div>
+        <div class="part-desc">听录音，填空</div>
+        <div class="question">1.去邮<span class="blank-line"></span>怎么走？</div>
+        <div class="question">2.一直往前<span class="blank-line"></span>。</div>
+        <div class="question">3.到十字路<span class="blank-line"></span>往右拐。</div>
+        <div class="question">4.离这儿多<span class="blank-line"></span>？</div>
+        <div class="question">5.二百多<span class="blank-line"></span>。</div>
+        <div class="question">6.从这儿到百货大楼有十三四公<span class="blank-line"></span>。</div>
+        <div class="question">7.先坐2路公共汽<span class="blank-line"></span>。</div>
+        <div class="question">8.然后换地<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 8 · Listen and choose the correct information</div>
+        <div class="part-desc">听介绍，选择正确信息</div>
+        <div class="question">1. Where does Lili want to go?  A.邮局（yóujú）  B.银行（yínháng）  C.书店（shūdiàn）</div>
+        <div class="question">2. How does the Chinese man tell her to go?  A.一直往前走，到十字路口往右拐  B.过马路，往左拐  C.坐（zuò）公共汽车</div>
+        <div class="question">3. How far is the post office from here?  A.二百多米  B.十三四公里  C.两公里</div>
+        <div class="question">4. How far is it from here to the department store?  A.二百多米  B.十三四公里  C.三十四公里</div>
+        <div class="question">5. Which bus does she take first?  A.一路  B.二路  C.三路</div>
+        <div class="question">6. What does she change to after that?  A.出租车  B.地铁  C.火车</div>
+        <div class="question">7. What does she do first after crossing the road?  A.坐（zuò）公共汽车  B.换（huàn）地铁  C.往右拐</div>
+        <div class="question">8. Who asks how to get there by bus?  A.莉莉  B.直美  C.中国人</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 9 · Listen and fill in the table</div>
+        <div class="part-desc">听录音，填写信息表</div>
+        <div class="question">表头：去哪儿 | 多远 | 怎么走 | 坐（zuò）什么车 | 然后</div>
+        <div class="question">行1：邮局（yóujú）</div>
+        <div class="question">行2：百货大楼</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Part 10 · Listen to the passage and choose the correct answer</div>
+        <div class="part-desc">听短文，选择正确答案</div>
+        <div class="question">1. Where do Baoluo and Yingnan go on the weekend?  A.大同  B.天安门（Tiān&#x27;ānmén）  C.邮局（yóujú）</div>
+        <div class="question">2. How does Baoluo want to go?  A.坐（zuò）火车  B.坐（zuò）飞机  C.坐（zuò）公共汽车</div>
+        <div class="question">3. Why doesn&#x27;t Yingnan want to take the plane?  A.太贵了  B.太快了  C.不舒服</div>
+        <div class="question">4. How do they go there at last?  A.飞机  B.火车  C.汽车</div>
+        <div class="question">5. How is Baoluo&#x27;s bike-riding skill?  A.很高  B.不太高  C.他不会骑（qí）车</div>
+        <div class="question">6. Which road is shorter?  A.那条路  B.这条路  C.两条路一样</div>
+        <div class="question">7. How is this road?  A.有点儿乱  B.很宽  C.太远</div>
+        <div class="question">8. Which road does Baoluo take?  A.这条路  B.那条路  C.不知道</div>
+      </div>
+      <div class="speaking-section" style="border-top: 2px solid #1565C0;">
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 1 · Read aloud after the recording</div>
+        <div class="part-desc">跟读</div>
+        <div class="question">1.去邮局怎么走？</div>
+        <div class="question">2.一直往前走。</div>
+        <div class="question">3.到十字路口往右拐。</div>
+        <div class="question">4.离这儿多远？</div>
+        <div class="question">5.二百多米。</div>
+        <div class="question">6.过马路，先坐2路公共汽车。</div>
+        <div class="question">7.然后换地铁。</div>
+        <div class="question">8.这条路近，不过有点儿乱。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 2 · Make sentences with the given words</div>
+        <div class="part-desc">用所给词语组成句子</div>
+        <div class="question">1.去/邮局（yóujú）/怎么/走</div>
+        <div class="question">2.一直/往/前/走</div>
+        <div class="question">3.十字/路口/往右/拐</div>
+        <div class="question">4.离/这儿/多远</div>
+        <div class="question">5.二百/多米</div>
+        <div class="question">6.从/这儿/到/百货大楼</div>
+        <div class="question">7.过/马路</div>
+        <div class="question">8.然后/换/地铁</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 3 · Describe the people or things</div>
+        <div class="part-desc">用&quot;的&quot;和形容词描述</div>
+        <div class="question">1.你想去的地方（邮局yóujú）</div>
+        <div class="question">2.怎么走（一直往前走，到十字路口往右拐）</div>
+        <div class="question">3.邮局离这儿（二百多米）</div>
+        <div class="question">4.从这儿到百货大楼（十三四公里）</div>
+        <div class="question">5.怎么坐（zuò）车（先坐（zuò）2路公共汽车，然后换（huàn）地铁）</div>
+        <div class="question">6.保罗骑车技术（不太高）</div>
+        <div class="question">7.这条路（近，不过有点儿乱）</div>
+        <div class="question">8.周末去大同（坐（zuò）火车）</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 4 · Complete the dialogue</div>
+        <div class="part-desc">补全对话</div>
+        <div class="question">A：你们好！认识你们，①<span class="blank-line"></span>。</div>
+        <div class="question">B：我们也②<span class="blank-line"></span>。</div>
+        <div class="question">A：我来介绍③<span class="blank-line"></span>一下儿，这是西蒙，他是法国人。</div>
+        <div class="question">C：西蒙，你好！我是李英男，我是韩国人，我④<span class="blank-line"></span>汉语。</div>
+        <div class="question">A：李英男，你好！你是A班的⑤<span class="blank-line"></span>吗？</div>
+        <div class="question">C：是，我是A班的学生。</div>
+        <div class="question">A：我也是A班的，我们都是⑥<span class="blank-line"></span>。</div>
+        <div class="question">C：认识你⑦<span class="blank-line"></span>。</div>
+        <div class="question">A：我也⑧<span class="blank-line"></span>。</div>
+      </div>
+      <div class="part">
+        <div class="part-title" style="border-left-color: #1565C0;">Speaking 5 · Talk about yourself</div>
+        <div class="part-desc">自由表达</div>
+        <div class="question">1. Ask how to get to the post office.</div>
+        <div class="question">2. Say the post office is 200 meters away.</div>
+        <div class="question">3. Say you walk straight and turn right.</div>
+        <div class="question">4. Ask how far it is to the department store.</div>
+        <div class="question">5. Say you take the No.2 bus and then the subway.</div>
+        <div class="question">6. Say one road is shorter but a bit messy.</div>
+        <div class="question">7. Say you will take the train, not the plane.</div>
+        <div class="question">8. Ask which road you should take.</div>
+      </div>
+      </div>
+    </div>
+
+
+<!-- ===== 封底 ===== -->
+<div class="back-cover">
+  <div class="logo">听</div>
+  <div style="font-size: 14pt; margin-bottom: 10px;">汉语口语速成 · 入门篇（上）</div>
+  <div style="font-size: 12pt; color: #999;">听力练习册 · 学生版</div>
+</div>
+
+</body>
+</html>
